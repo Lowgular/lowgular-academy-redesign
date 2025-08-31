@@ -14,11 +14,25 @@
 
 /* Complexity pill → subtle like your meta text */
 .lg-cmeter {
+  --tone: var(--accent);
   font-size: 12px;
   font-weight: 700;
-  color: var(--muted);
+  color: var(--text-high);
   padding: 2px 8px;
   border-radius: 9999px;
   border: 1px solid var(--container-outline-weak);
   background: var(--surface-2);
+  align-items: center;
+  display: flex;
+  gap: 2px;
+  line-height: 1;
+  vertical-align: middle;
+  .icon {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    fill: var(--tone); /* star uses tone */
+    /* subtle lift on dark bg */
+    filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, 0.4));
+  }
 }
