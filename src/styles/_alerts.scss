@@ -1,0 +1,138 @@
+/* Base alert */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  padding: var(--pad-2);
+  border-radius: var(--radius);
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface-2);
+  box-shadow: var(--card-shadow);
+  font-size: 14px;
+}
+
+/* Optional icon badge */
+.alert__icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.alert__content {
+  display: grid;
+  gap: 2px;
+}
+.alert__title {
+  font-weight: 700;
+}
+.alert__msg {
+  color: var(--muted);
+}
+
+/* Warning state */
+.alert--warning {
+  border-color: color-mix(
+    in oklab,
+    var(--warning) 28%,
+    var(--container-outline-weak)
+  );
+  background: color-mix(in oklab, var(--warning) 12%, var(--surface));
+}
+.alert--warning .alert__icon {
+  background: var(--warning);
+  color: #000;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--warning) 30%, transparent)
+    inset;
+}
+.alert--warning .alert__title {
+  color: var(--warning);
+}
+
+/* Links inside warning blocks stay readable */
+.alert--warning a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--warning) 60%, white);
+}
+
+.alert--danger {
+  border-color: color-mix(
+    in oklab,
+    var(--danger) 28%,
+    var(--container-outline-weak)
+  );
+  background: color-mix(in oklab, var(--danger) 12%, var(--surface));
+}
+.alert--danger .alert__icon {
+  background: var(--danger);
+  color: #000;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--danger) 30%, transparent)
+    inset;
+}
+.alert--danger .alert__title {
+  color: var(--danger);
+}
+
+/* Links inside warning blocks stay readable */
+.alert--danger a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--danger) 60%, white);
+}
+
+.alert--success {
+  border-color: color-mix(
+    in oklab,
+    var(--success) 28%,
+    var(--container-outline-weak)
+  );
+  background: color-mix(in oklab, var(--success) 12%, var(--surface));
+}
+.alert--success .alert__icon {
+  background: var(--success);
+  color: #000;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--danger) 30%, transparent)
+    inset;
+}
+.alert--success .alert__title {
+  color: var(--success);
+}
+
+/* Links inside warning blocks stay readable */
+.alert--success a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--success) 60%, white);
+}
+
+.alert--info {
+  border-color: color-mix(
+    in oklab,
+    var(--info) 28%,
+    var(--container-outline-weak)
+  );
+  background: color-mix(in oklab, var(--info) 12%, var(--surface));
+}
+.alert--info .alert__icon {
+  background: var(--info);
+  color: #000;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--info) 30%, transparent) inset;
+}
+.alert--info .alert__title {
+  color: var(--info);
+}
+
+/* Optional: outline-only variation for very dense pages */
+.alert--info.is-outline {
+  background: var(--surface);
+  border-color: color-mix(
+    in oklab,
+    var(--info) 34%,
+    var(--container-outline-weak)
+  );
+}

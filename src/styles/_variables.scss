@@ -4,18 +4,18 @@
   --surface-2: #1c1f26;
   --text: #e9eef6;
   --muted: #a3adbc;
+  --neutral: #2a313c;
+
   --brand: oklch(61% 0.14 240);
 
   --primary: oklch(62% 0.17 240); /* blue */
-  --status-progress: oklch(86% 0.12 100);
-  /* or, if you’re using a single accent token */
-  --accent: oklch(86% 0.12 100);
-  --danger: oklch(
-    73% 0.22 28
-  ); /* mango (used for “in progress” & discovered) */
+  --accent: oklch(86% 0.12 100); /* highlight/in-progress/discovered */
+  --teriary: oklch(65% 0.17 300); /* purple (used for in review) */
+
+  --warning: oklch(82% 0.13 85); /* amber for cautions */
+  --danger: oklch(58% 0.2 28); /* redder for destructive */
   --success: oklch(70% 0.15 160); /* green/teal (used for done & practiced) */
-  --review: oklch(65% 0.17 300); /* purple (used for in review) */
-  --neutral: #2a313c;
+  --info: oklch(82% 0.1 240); /* blue/teal (used for info) */
 
   --link: var(--brand);
   --link-visited: var(--brand);

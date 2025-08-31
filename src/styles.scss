@@ -6,6 +6,8 @@
 @use "./styles/_tags.scss" as *;
 @use "./styles/_pills.scss" as *;
 @use "./styles/_links.scss" as *;
+@use "./styles/_alerts.scss" as *;
+
 * {
   box-sizing: border-box;
 }
