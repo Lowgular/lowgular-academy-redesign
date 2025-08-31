@@ -35,9 +35,9 @@
   border-color: color-mix(in oklab, var(--success) 26%, transparent);
 }
 .chip--review {
-  color: var(--review);
-  background: color-mix(in oklab, var(--review) 18%, transparent);
-  border-color: color-mix(in oklab, var(--review) 26%, transparent);
+  color: var(--info);
+  background: color-mix(in oklab, var(--info) 18%, transparent);
+  border-color: color-mix(in oklab, var(--info) 26%, transparent);
 }
 
 /* XS chip size for tight rows (optional, only when you add .chip--xs) */

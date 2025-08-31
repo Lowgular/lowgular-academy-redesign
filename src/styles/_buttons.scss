@@ -54,17 +54,17 @@
 .lg-btn[data-variant="primary"] {
   --btn-c: var(--primary);
 }
-.lg-btn[data-variant="progress"] {
+.lg-btn[data-variant="accent"] {
   --btn-c: var(--accent);
 } /* "In progress" */
-.lg-btn[data-variant="review"] {
-  --btn-c: var(--review);
-} /* "In review"   */
 .lg-btn[data-variant="success"] {
   --btn-c: var(--success);
 }
 .lg-btn[data-variant="danger"] {
   --btn-c: var(--danger);
+}
+.lg-btn[data-variant="warning"] {
+  --btn-c: var(--warning);
 }
 .lg-btn[data-variant="neutral"] {
   --btn-c: var(--muted);
@@ -85,6 +85,9 @@
   background: var(--btn-c);
   border-color: color-mix(in oklab, var(--btn-c) 40%, black);
   color: white;
+  &[data-variant="accent"] {
+    color: var(--on-accent);
+  }
 }
 .lg-btn--solid:hover {
   background: color-mix(in oklab, var(--btn-c) 86%, white);

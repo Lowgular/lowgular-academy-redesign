@@ -6,13 +6,60 @@
   --muted: #a3adbc;
   --neutral: #2a313c;
 
-  --brand: oklch(61% 0.14 240);
+  /* 1) Calm / trustworthy — BLUE primary + YELLOW accent */
+  // --primary: oklch(62% 0.17 240); /* blue */
+  // --accent: oklch(86% 0.12 100); /* highlight/in-progress/discovered */
+  // --teriary: oklch(65% 0.17 300); /* purple (used for in review) */
 
-  --primary: oklch(62% 0.17 240); /* blue */
-  --accent: oklch(86% 0.12 100); /* highlight/in-progress/discovered */
-  --teriary: oklch(65% 0.17 300); /* purple (used for in review) */
+  // Good alternative
+  /* ==============================
+     THEME A — BLUE+YELLOW (default)
+     Keeps the calm/trustworthy feel
+     ============================== */
+  //  --primary: oklch(66% 0.12 245);
+  //  --accent: oklch(78% 0.15 45); /* ember orange */
 
-  --warning: oklch(82% 0.13 85); /* amber for cautions */
+  // /* ==============================
+  //    OPTIONAL — COBALT+CITRINE (high contrast)
+  //    Classic dev blue with a readable yellow
+  //    (less green than before)
+  //    ============================== */
+  --primary: oklch(68% 0.14 245);
+  // --accent: oklch(88% 0.12 100); /* citrine (clean yellow) */
+  --accent: oklch(92% 0.14 100);
+  --on-accent: oklch(20% 0.02 260);
+
+  /* 2) Confident / modern — TEAL primary + AMBER accent */
+  // --primary: oklch(66% 0.14 200);
+  // --accent: oklch(83% 0.14 75);
+
+  /* 3) Creative / energetic — VIOLET primary + LIME accent */
+  // --primary: oklch(64% 0.16 295);
+  // --accent: oklch(86% 0.12 135); // this is a bit weird
+  /* 4) Warm / optimistic — AMBER primary + ELECTRIC BLUE accent */
+  // --primary: oklch(80% 0.12 95);
+  // --accent: oklch(66% 0.18 250); // here blue doesnt work
+  /* A) Techy, understated — STEEL primary + CITRINE accent */
+  // --primary: oklch(64% 0.07 250);
+  // --accent: oklch(84% 0.1 100); /* softer yellow */
+
+  // /* B) Creative but professional — VIOLET primary + AQUA accent */
+  // --primary: oklch(62% 0.14 295); /* slightly desaturated violet */
+  // --accent: oklch(82% 0.1 210); /* soft aqua (less green than lime) */
+
+  // /* C) Warm & confident — AMBER primary + PLUM accent */
+  // --primary: oklch(76% 0.11 95); /* a touch deeper than before */
+  // --accent: oklch(78% 0.14 330); /* muted plum/magenta */
+
+  /* ==============================
+     THEME B — VIOLET+AQUA (contrast bump)
+     Keeps the creative feel but fixes the
+     “accent not visible” issue
+     ============================== */
+  // --primary: oklch(62% 0.15 295); /* a hair brighter than before */
+  // --accent: oklch(86% 0.13 210); /* brighter aqua for visibility */
+
+  --warning: oklch(76% 0.17 55); /* amber for cautions */
   --danger: oklch(58% 0.2 28); /* redder for destructive */
   --success: oklch(70% 0.15 160); /* green/teal (used for done & practiced) */
   --info: oklch(82% 0.1 240); /* blue/teal (used for info) */
