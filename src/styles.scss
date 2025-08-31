@@ -38,6 +38,14 @@
   --tag-br: 9999px;
 
   --container-w: 760px;
+
+  --container: var(--surface);
+  --container-2: var(--surface-2);
+  --line-weak: rgba(255, 255, 255, 0.06);
+  --text-high: var(--text);
+  --text-muted: var(--muted);
+  --container-outline-weak: rgba(255, 255, 255, 0.06);
+  --container-muted: color-mix(in oklab, var(--surface) 88%, transparent);
 }
 
 * {
@@ -65,142 +73,128 @@ body {
   background: color-mix(in oklab, var(--surface) 86%, transparent);
   backdrop-filter: saturate(110%) blur(6px);
   border-bottom: 1px dashed var(--container-outline-weak);
-
-  &__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.5rem 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  &__brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--text-high);
-
-    .lg-logo {
-      display: inline-flex;
-      align-items: center;
-
-      /* If SVG is inline, recolor it: */
-      svg,
-      svg * {
-        fill: var(--brand) !important;
-        stroke: var(--brand) !important;
-      }
-      img {
-        display: block;
-        height: 28px;
-        width: auto;
-      }
-    }
-
-    .lg-wordmark {
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      font-size: 1rem;
-      line-height: 1;
-      color: var(--brand);
-    }
-  }
-
-  &__spacer {
-    margin-left: auto;
-  }
+}
+.lg-navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.lg-navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-high);
+}
+.lg-navbar__brand .lg-logo {
+  display: inline-flex;
+  align-items: center;
+}
+.lg-navbar__brand .lg-logo svg,
+.lg-navbar__brand .lg-logo svg * {
+  fill: var(--brand) !important;
+  stroke: var(--brand) !important;
+}
+.lg-navbar__brand .lg-logo img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+.lg-navbar__brand .lg-wordmark {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--brand);
+}
+.lg-navbar__spacer {
+  margin-left: auto;
 }
 
 /* User menu */
 .lg-user {
   position: relative;
-
-  &__summary {
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid var(--container-outline-weak);
-    background: var(--container);
-    padding: 0.25rem 0.35rem 0.25rem 0.25rem;
-    border-radius: 9999px;
-    cursor: pointer;
-    user-select: none;
-
-    &:focus-visible {
-      outline: 2px solid var(--brand);
-      outline-offset: 2px;
-    }
-  }
-
-  .lg-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-weight: 800;
-    /* blends brand with container so it’s not too loud */
-    background: color-mix(in oklab, var(--brand) 18%, var(--container));
-    border: 1px solid
-      color-mix(in oklab, var(--brand) 35%, var(--container-outline-weak));
-    color: var(--text-high);
-    line-height: 1;
-  }
-
-  &__menu {
-    position: absolute;
-    right: 0;
-    margin-top: 0.5rem;
-    min-width: 200px;
-    padding: 0.4rem;
-    background: var(--container);
-    border: 1px solid var(--container-outline-weak);
-    border-radius: 0.75rem;
-    box-shadow: 0 6px 24px color-mix(in oklab, black 20%, transparent);
-    display: none;
-
-    li {
-      list-style: none;
-    }
-
-    a,
-    button {
-      width: 100%;
-      text-align: left;
-      background: transparent;
-      border: 0;
-      color: var(--text-high);
-      font-weight: 600;
-      padding: 0.6rem 0.6rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-
-      &:hover {
-        background: var(--container-muted);
-      }
-      &:focus-visible {
-        outline: 2px solid var(--brand);
-        outline-offset: 2px;
-      }
-    }
-
-    /* subtle separator */
-    li + li {
-      border-top: 1px dashed var(--container-outline-weak);
-    }
-    li + li a,
-    li + li button {
-      margin-top: 0.2rem;
-    }
-  }
-
-  /* Open state of <details> */
-  &[open] .lg-user__menu {
-    display: block;
-  }
+}
+.lg-user__summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--container-outline-weak);
+  background: var(--container);
+  padding: 0.25rem 0.35rem 0.25rem 0.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  user-select: none;
+}
+.lg-user__summary:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.lg-user .lg-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  /* blends brand with container so it’s not too loud */
+  background: color-mix(in oklab, var(--brand) 18%, var(--container));
+  border: 1px solid
+    color-mix(in oklab, var(--brand) 35%, var(--container-outline-weak));
+  color: var(--text-high);
+  line-height: 1;
+}
+.lg-user__menu {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 200px;
+  padding: 0.4rem;
+  background: var(--container);
+  border: 1px solid var(--container-outline-weak);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 24px color-mix(in oklab, black 20%, transparent);
+  display: none;
+}
+.lg-user__menu li {
+  list-style: none;
+}
+.lg-user__menu a,
+.lg-user__menu button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: var(--text-high);
+  font-weight: 600;
+  padding: 0.6rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.lg-user__menu a:hover,
+.lg-user__menu button:hover {
+  background: var(--container-muted);
+}
+.lg-user__menu a:focus-visible,
+.lg-user__menu button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+/* subtle separator */
+.lg-user__menu li + li {
+  border-top: 1px dashed var(--container-outline-weak);
+}
+.lg-user__menu li + li a,
+.lg-user__menu li + li button {
+  margin-top: 0.2rem;
+}
+/* Open state of <details> */
+.lg-user[open] .lg-user__menu {
+  display: block;
 }
 
 /* Small tweaks on tiny screens */
@@ -244,6 +238,125 @@ header h1 {
 header p {
   margin: 0;
   color: var(--muted);
+}
+
+.lg-btn {
+  /* sizing */
+  --btn-h: 36px;
+  --btn-px: 14px;
+  --btn-br: var(--radius);
+  /* color var for variants */
+  --btn-c: var(--muted);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--btn-h);
+  padding: 0 var(--btn-px);
+  border-radius: var(--btn-br);
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface-2);
+  color: var(--text-high);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease,
+    color 0.15s ease, box-shadow 0.15s ease, transform 0.06s ease-in-out;
+}
+
+.lg-btn:hover {
+  border-color: color-mix(
+    in oklab,
+    var(--btn-c) 22%,
+    var(--container-outline-weak)
+  );
+}
+.lg-btn:active {
+  transform: translateY(1px);
+}
+.lg-btn:disabled,
+.lg-btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.lg-btn .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+/* Variants (pick color) */
+.lg-btn[data-variant="primary"] {
+  --btn-c: var(--primary);
+}
+.lg-btn[data-variant="progress"] {
+  --btn-c: var(--accent);
+} /* "In progress" */
+.lg-btn[data-variant="review"] {
+  --btn-c: var(--review);
+} /* "In review"   */
+.lg-btn[data-variant="success"] {
+  --btn-c: var(--success);
+}
+.lg-btn[data-variant="danger"] {
+  --btn-c: var(--danger);
+}
+.lg-btn[data-variant="neutral"] {
+  --btn-c: var(--muted);
+}
+
+/* Styles: soft / solid / outline */
+.lg-btn--soft {
+  background: color-mix(in oklab, var(--btn-c) 18%, transparent);
+  border-color: color-mix(in oklab, var(--btn-c) 26%, transparent);
+  color: var(--btn-c);
+}
+.lg-btn--soft:hover {
+  background: color-mix(in oklab, var(--btn-c) 24%, transparent);
+  border-color: color-mix(in oklab, var(--btn-c) 36%, transparent);
+}
+
+.lg-btn--solid {
+  background: var(--btn-c);
+  border-color: color-mix(in oklab, var(--btn-c) 40%, black);
+  color: white;
+}
+.lg-btn--solid:hover {
+  background: color-mix(in oklab, var(--btn-c) 86%, white);
+}
+
+.lg-btn--outline {
+  background: transparent;
+  color: var(--btn-c);
+  border-color: color-mix(in oklab, var(--btn-c) 50%, transparent);
+}
+.lg-btn--outline:hover {
+  background: color-mix(in oklab, var(--btn-c) 14%, var(--surface));
+  border-color: var(--btn-c);
+}
+
+/* Sizes */
+.lg-btn.is-sm {
+  --btn-h: 30px;
+  --btn-px: 10px;
+  font-size: 0.88rem;
+}
+.lg-btn.is-lg {
+  --btn-h: 42px;
+  --btn-px: 18px;
+  font-size: 1rem;
+}
+
+/* Simple layout helper for demos */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 section {
@@ -290,7 +403,7 @@ section h2 {
   letter-spacing: -0.01em;
 }
 
-/* Status chip */
+/* Status chip (global) */
 .chip {
   display: inline-flex;
   align-items: center;
@@ -330,6 +443,132 @@ section h2 {
   color: var(--review);
   background: color-mix(in oklab, var(--review) 18%, transparent);
   border-color: color-mix(in oklab, var(--review) 26%, transparent);
+}
+
+/* ===========================
+   Lists (vertical & horizontal)
+   =========================== */
+
+/* Vertical list */
+.lg-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px; /* tidy vertical rhythm */
+}
+.lg-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 0;
+}
+.lg-list .bullet {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--container-outline-weak);
+  margin-top: 6px; /* aligns dot with first line of text */
+}
+.lg-list .content {
+  min-width: 0;
+}
+.lg-list .content strong {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.lg-list .content .meta {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Color variants for bullets (optional) */
+.lg-list[data-variant="accent"] .bullet {
+  background: var(--accent);
+}
+.lg-list[data-variant="success"] .bullet {
+  background: var(--success);
+}
+.lg-list[data-variant="review"] .bullet {
+  background: var(--review);
+}
+.lg-list[data-variant="danger"] .bullet {
+  background: var(--danger);
+}
+
+/* Compact density option */
+.lg-list.is-compact {
+  gap: 6px;
+}
+.lg-list.is-compact li {
+  padding: 2px 0;
+}
+.lg-list.is-compact .bullet {
+  margin-top: 5px;
+}
+
+/* Horizontal list (inline) */
+.lg-list-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px; /* row gap / column gap */
+}
+.lg-list-inline li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.3;
+}
+.lg-list-inline li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--container-outline-weak);
+}
+/* Color variants for inline bullets */
+.lg-list-inline[data-variant="accent"] li::before {
+  background: var(--accent);
+}
+.lg-list-inline[data-variant="success"] li::before {
+  background: var(--success);
+}
+.lg-list-inline[data-variant="review"] li::before {
+  background: var(--review);
+}
+.lg-list-inline[data-variant="danger"] li::before {
+  background: var(--danger);
+}
+
+/* Sizes */
+.lg-list-inline.is-sm {
+  gap: 8px 10px;
+}
+.lg-list-inline.is-sm li {
+  gap: 6px;
+}
+.lg-list-inline.is-sm li::before {
+  width: 5px;
+  height: 5px;
+}
+
+/* Optional: make list items clickable without changing semantics */
+.lg-list a,
+.lg-list-inline a {
+  color: var(--text-high);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+.lg-list a:hover,
+.lg-list-inline a:hover {
+  background: color-mix(in oklab, var(--surface-2) 80%, transparent);
 }
 
 /* Progress (for "in progress" examples) */
@@ -460,10 +699,7 @@ section h2 {
 }
 
 /* ===========================
-   Section chips (tab-like pills)
-   Uses your existing tokens:
-   --surface, --container, --container-muted, --container-outline-weak,
-   --text-high, --text-muted, --accent
+   Section chips (tab-like pills) — SCOPED
    =========================== */
 
 .section-chips {
@@ -483,11 +719,12 @@ section h2 {
   border-bottom: 1px dashed var(--container-outline-weak);
 }
 
-.chip {
+.section-chips .chip {
   scroll-snap-align: start;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  height: var(--chip-h);
   padding: 0.45rem 0.85rem;
   border-radius: 9999px;
   border: 1px solid var(--container-outline-weak);
@@ -499,63 +736,178 @@ section h2 {
   white-space: nowrap;
   transition: border-color 0.15s ease, background-color 0.15s ease,
     color 0.15s ease, box-shadow 0.15s ease, transform 0.06s ease-in-out;
+}
+.section-chips .chip:hover {
+  border-color: color-mix(
+    in oklab,
+    var(--accent) 32%,
+    var(--container-outline-weak)
+  );
+}
+.section-chips .chip:active {
+  transform: translateY(1px);
+}
+.section-chips .chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
-  /* focus & hover */
-  &:hover {
-    border-color: color-mix(
-      in oklab,
-      var(--accent) 32%,
-      var(--container-outline-weak)
-    );
-  }
-  &:active {
-    transform: translateY(1px);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+.section-chips .chip__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--container-outline-weak);
+  flex: 0 0 0.5rem;
+}
 
-  /* optional leading dot */
-  &__dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: var(--container-outline-weak);
-    flex: 0 0 0.5rem;
-  }
+.section-chips .chip__badge {
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.5rem;
+  background: var(--container-muted);
+  border: 1px solid var(--container-outline-weak);
+}
 
-  /* tiny right badge (e.g., “3/7”) */
-  &__badge {
-    font-weight: 700;
-    font-size: 0.75rem;
-    padding: 0.15rem 0.4rem;
-    border-radius: 0.5rem;
-    background: var(--container-muted);
-    border: 1px solid var(--container-outline-weak);
-  }
+.section-chips .chip.is-active {
+  background: color-mix(in oklab, var(--accent) 14%, var(--container));
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent);
+}
+.section-chips .chip.is-active .chip__dot {
+  background: var(--accent);
+}
 
-  /* ACTIVE (current/open section) */
-  &.is-active {
-    background: color-mix(in oklab, var(--accent) 14%, var(--container));
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent);
-    .chip__dot {
-      background: var(--accent);
-    }
-  }
+.section-chips .chip.is-locked {
+  color: var(--text-muted);
+  background: var(--container);
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.section-chips .chip.is-locked .chip__dot {
+  background: var(--container-outline-weak);
+}
 
-  /* LOCKED (disabled/unavailable) */
-  &.is-locked {
-    color: var(--text-muted);
-    background: var(--container);
-    opacity: 0.6;
-    cursor: not-allowed;
-    pointer-events: none;
-    .chip__dot {
-      background: var(--container-outline-weak);
-    }
+@media (max-width: 420px) {
+  .section-chips .chip {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
   }
+}
+
+/* Constrain width like your pages */
+.lg-wrapper {
+  max-width: var(--container-w);
+}
+
+/* Sections & cards: match your surfaces, radius, shadow, spacing */
+.lg-section {
+  background: var(--surface-2);
+  border: 1px solid var(--container-outline-weak);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--pad-2);
+}
+
+.lg-card {
+  background: var(--surface);
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--pad-2);
+}
+.lg-card.is-compact {
+  gap: var(--gap-2);
+}
+.lg-card.is-detailed {
+  gap: var(--gap-2);
+}
+
+/* Status stripe: subtle like your hairline */
+.lg-stripe {
+  height: 2px;
+  background: var(--surface-2);
+  border-radius: 2px;
+}
+
+/* Badges → align with your .chip scale */
+.lg-badge {
+  height: var(--chip-h);
+  padding: 0 var(--chip-px);
+  border-radius: var(--chip-br);
+  font-size: 12px;
+  font-weight: var(--chip-fw);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
+  color: #c7cfdb;
+}
+.lg-badge[data-status="todo"] {
+  color: #c7cfdb;
+}
+.lg-badge[data-status="in-progress"] {
+  color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+  border-color: color-mix(in oklab, var(--accent) 26%, transparent);
+}
+.lg-badge[data-status="in-review"] {
+  color: var(--review);
+  background: color-mix(in oklab, var(--review) 18%, transparent);
+  border-color: color-mix(in oklab, var(--review) 26%, transparent);
+}
+.lg-badge[data-status="done"] {
+  color: var(--success);
+  background: color-mix(in oklab, var(--success) 18%, transparent);
+  border-color: color-mix(in oklab, var(--success) 26%, transparent);
+}
+
+/* Tags → align with your .tag scale & flavors */
+.lg-tag {
+  height: var(--tag-h);
+  padding: 0 var(--tag-px);
+  border-radius: var(--tag-br);
+  font-size: 12px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+.lg-tag[data-flavor="discovered"] {
+  border-color: color-mix(in oklab, var(--accent) 26%, transparent);
+}
+.lg-tag[data-flavor="practiced"] {
+  border-color: color-mix(in oklab, var(--success) 26%, transparent);
+}
+
+/* Complexity pill → subtle like your meta text */
+.lg-cmeter {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface-2);
+}
+
+/* Pills (tabs) — keep shapes but tone down to match */
+.lg-pills {
+  background: var(--surface-2);
+  border: 1px solid var(--container-outline-weak);
+}
+.lg-pill {
+  color: var(--muted);
+}
+.lg-pill.is-active {
+  background: color-mix(in oklab, var(--accent) 14%, var(--surface));
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* Navbar demo block (if present): use your navbar styling instead */
+.lg-demo-nav {
+  background: color-mix(in oklab, var(--surface) 86%, transparent);
+  border: 1px dashed var(--container-outline-weak);
 }
 
 /* Optional: compact on very small screens */

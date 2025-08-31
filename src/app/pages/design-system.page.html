@@ -1,0 +1,463 @@
+<!-- Navbar (uses your .lg-navbar styles) -->
+<nav class="lg-navbar">
+  <div class="lg-navbar__inner">
+    <a class="lg-navbar__brand" href="#">
+      <span class="lg-logo">
+        <img src="assets/images/LOGO-Lowgular.svg" alt="Lowgular" />
+      </span>
+      <span class="lg-wordmark">LOWGULAR</span>
+    </a>
+    <div class="lg-navbar__spacer"></div>
+    <details class="lg-user">
+      <summary class="lg-user__summary">
+        <span class="lg-avatar" aria-hidden="true">GL</span>
+        <span class="sr-only">Open user menu</span>
+      </summary>
+      <ul class="lg-user__menu">
+        <li><button type="button">Profile</button></li>
+        <li><button type="button">Log out</button></li>
+      </ul>
+    </details>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header>
+    <h1>Atomic Design System</h1>
+    <p>Atoms → Molecules → Organisms → Template → Page using your tokens, cards, chips, tags, and tasks.</p>
+  </header>
+
+  <!-- ======================
+         ATOMS
+         ====================== -->
+  <section aria-labelledby="atoms-title">
+    <h2 id="atoms-title">Atoms</h2>
+
+    <!-- Status Chips -->
+    <article class="card">
+      <h3 class="title">Status chips</h3>
+      <div class="row">
+        <span class="chip chip--todo"><span class="dot"></span> To-Do</span>
+        <span class="chip chip--progress"><span class="dot"></span> In progress</span>
+        <span class="chip chip--review"><span class="dot"></span> In review</span>
+        <span class="chip chip--done"><span class="dot"></span> Done</span>
+      </div>
+    </article>
+
+    <!-- Badges (alt status) -->
+    <article class="card">
+      <h3 class="title">Badges</h3>
+      <div class="row">
+        <span class="lg-badge" data-status="todo">To-Do</span>
+        <span class="lg-badge" data-status="in-progress">In progress</span>
+        <span class="lg-badge" data-status="in-review">In review</span>
+        <span class="lg-badge" data-status="done">Done</span>
+      </div>
+    </article>
+
+    <!-- Tags / Flavors -->
+    <article class="card">
+      <h3 class="title">Tags &amp; flavors</h3>
+      <div class="tags">
+        <span class="tag" data-flavor="discovered"><span class="flavor"></span>event bus: channel: void</span>
+        <span class="tag" data-flavor="practiced"><span class="flavor"></span>event bus: channel: subject</span>
+        <span class="tag" data-flavor="discovered"><span class="flavor"></span>event model: primitive</span>
+        <span class="tag" data-flavor="practiced"><span class="flavor"></span>event model: type</span>
+      </div>
+    </article>
+
+    <!-- Progress bar -->
+    <article class="card">
+      <h3 class="title">Progress</h3>
+      <div class="stack">
+        <div>
+          <div class="muted mono">25%</div>
+          <div class="progress" style="--w:25%"><span></span></div>
+        </div>
+        <div>
+          <div class="muted mono">60%</div>
+          <div class="progress" style="--w:60%"><span></span></div>
+        </div>
+        <div>
+          <div class="muted mono">90%</div>
+          <div class="progress" style="--w:90%"><span></span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Complexity meter -->
+    <article class="card">
+      <h3 class="title">Complexity meter</h3>
+      <div class="row">
+        <span class="lg-cmeter">1/5</span>
+        <span class="lg-cmeter">3/5</span>
+        <span class="lg-cmeter">5/5</span>
+      </div>
+    </article>
+    <section aria-labelledby="buttons-title">
+      <h2 id="buttons-title">Buttons</h2>
+
+      <article class="card">
+        <h3 class="title">Soft (recommended on dark surfaces)</h3>
+        <div class="btn-row">
+          <button class="lg-btn lg-btn--soft" data-variant="primary"><span class="dot"></span>Primary</button>
+          <button class="lg-btn lg-btn--soft" data-variant="progress"><span class="dot"></span>In progress</button>
+          <button class="lg-btn lg-btn--soft" data-variant="review"><span class="dot"></span>In review</button>
+          <button class="lg-btn lg-btn--soft" data-variant="success"><span class="dot"></span>Success</button>
+          <button class="lg-btn lg-btn--soft" data-variant="danger"><span class="dot"></span>Danger</button>
+          <button class="lg-btn lg-btn--soft" data-variant="neutral"><span class="dot"></span>Neutral</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3 class="title">Solid (for primary CTAs)</h3>
+        <div class="btn-row">
+          <button class="lg-btn lg-btn--solid" data-variant="primary">Primary</button>
+          <button class="lg-btn lg-btn--solid" data-variant="progress">In progress</button>
+          <button class="lg-btn lg-btn--solid" data-variant="review">In review</button>
+          <button class="lg-btn lg-btn--solid" data-variant="success">Success</button>
+          <button class="lg-btn lg-btn--solid" data-variant="danger">Danger</button>
+          <button class="lg-btn lg-btn--solid" data-variant="neutral">Neutral</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3 class="title">Outline (low emphasis)</h3>
+        <div class="btn-row">
+          <button class="lg-btn lg-btn--outline" data-variant="primary">Primary</button>
+          <button class="lg-btn lg-btn--outline" data-variant="progress">In progress</button>
+          <button class="lg-btn lg-btn--outline" data-variant="review">In review</button>
+          <button class="lg-btn lg-btn--outline" data-variant="success">Success</button>
+          <button class="lg-btn lg-btn--outline" data-variant="danger">Danger</button>
+          <button class="lg-btn lg-btn--outline" data-variant="neutral">Neutral</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3 class="title">Sizes & Disabled</h3>
+        <div class="btn-row">
+          <button class="lg-btn lg-btn--soft is-sm" data-variant="primary">Small</button>
+          <button class="lg-btn lg-btn--soft" data-variant="primary">Default</button>
+          <button class="lg-btn lg-btn--soft is-lg" data-variant="primary">Large</button>
+          <button class="lg-btn lg-btn--soft" data-variant="progress" disabled>Disabled</button>
+        </div>
+      </article>
+    </section>
+  </section>
+
+  <!-- ======================
+         MOLECULES
+         ====================== -->
+  <section aria-labelledby="molecules-title">
+    <h2 id="molecules-title">Molecules</h2>
+
+    <section aria-labelledby="lists-title">
+      <h2 id="lists-title">Lists</h2>
+
+      <!-- Vertical -->
+      <article class="card">
+        <h3 class="title">Unordered list — vertical</h3>
+        <ul class="lg-list" data-variant="accent">
+          <li>
+            <span class="bullet" aria-hidden="true"></span>
+            <div class="content">
+              <strong>Event Bus</strong>
+              <span class="meta">Lightweight pub/sub to decouple features.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet" aria-hidden="true"></span>
+            <div class="content">
+              <strong>Channel</strong>
+              <span class="meta">Named topic used by publishers &amp; subscribers.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet" aria-hidden="true"></span>
+            <div class="content">
+              <strong>Event Model</strong>
+              <span class="meta">Shape of message payloads (void, primitive, type, class).</span>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Horizontal -->
+      <article class="card">
+        <h3 class="title">Unordered list — horizontal</h3>
+        <ul class="lg-list-inline is-sm" data-variant="success">
+          <li>Intro</li>
+          <li>Pub/Sub Architecture</li>
+          <li>Channel</li>
+          <li>Event Model</li>
+          <li>Patterns</li>
+        </ul>
+      </article>
+    </section>
+
+
+    <!-- Learning card · Compact -->
+    <article class="card learning">
+      <div class="head">
+        <h3 class="title">Learning: EDA Pub/Sub</h3>
+        <span class="chip chip--progress"><span class="dot"></span> In progress</span>
+      </div>
+      <div class="progress" style="--w:60%"><span></span></div>
+      <div class="tags">
+        <span class="tag" data-flavor="discovered"><span class="flavor"></span>event bus: channel: void</span>
+        <span class="tag" data-flavor="practiced"><span class="flavor"></span>event bus: channel: subject</span>
+      </div>
+    </article>
+
+    <!-- Learning card · Detailed -->
+    <article class="card learning">
+      <div class="head">
+        <h3 class="title">Learning: Event Model</h3>
+        <span class="chip chip--done"><span class="dot"></span> Done</span>
+      </div>
+      <p class="muted">Concepts &amp; implementations explored: void, primitive, type, class.</p>
+      <div class="tags">
+        <span class="tag" data-flavor="discovered"><span class="flavor"></span>event model: void</span>
+        <span class="tag" data-flavor="discovered"><span class="flavor"></span>event model: primitive</span>
+        <span class="tag" data-flavor="practiced"><span class="flavor"></span>event model: type</span>
+        <span class="tag" data-flavor="discovered"><span class="flavor"></span>event model: class</span>
+      </div>
+    </article>
+
+    <!-- Task item -->
+    <article class="task">
+      <div class="top">
+        <h4 class="title">Task: Pub/Sub — Show Product</h4>
+        <span class="chip chip--review"><span class="dot"></span> In review</span>
+      </div>
+      <p class="desc">Publish selection from <span class="mono">ProductList</span> and render in <span
+          class="mono">ProductDetail</span>.</p>
+      <div class="foot">
+        <div class="meta">
+          <span class="muted">SP: 2</span>
+          <span class="lg-cmeter">3/5</span>
+        </div>
+        <div class="row">
+          <span class="tag" data-flavor="practiced"><span class="flavor"></span>channel: subject</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ======================
+         ORGANISMS
+         ====================== -->
+  <section aria-labelledby="organisms-title">
+    <h2 id="organisms-title">Organisms</h2>
+
+    <!-- Section: Modules -->
+    <section class="lg-section" aria-labelledby="modules-title">
+      <h3 id="modules-title" class="title">Modules</h3>
+      <div class="stack">
+        <article class="card learning">
+          <div class="head">
+            <h4 class="title">EDA — Pub/Sub</h4>
+            <span class="chip chip--progress"><span class="dot"></span> In progress</span>
+          </div>
+          <div class="progress" style="--w:55%"><span></span></div>
+          <div class="tags">
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>event bus: channel: void</span>
+            <span class="tag" data-flavor="practiced"><span class="flavor"></span>event bus: channel: subject</span>
+          </div>
+        </article>
+
+        <article class="card learning">
+          <div class="head">
+            <h4 class="title">EDA — Event Model</h4>
+            <span class="chip chip--done"><span class="dot"></span> Done</span>
+          </div>
+          <div class="tags">
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>void</span>
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>primitive</span>
+            <span class="tag" data-flavor="practiced"><span class="flavor"></span>type</span>
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>class</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section: Tasks -->
+    <section class="lg-section" aria-labelledby="tasks-title">
+      <h3 id="tasks-title" class="title">Project Tasks</h3>
+      <div class="stack">
+        <article class="task">
+          <div class="top">
+            <h4 class="title">Task 1 — Show Product</h4>
+            <span class="chip chip--todo"><span class="dot"></span> To-Do</span>
+          </div>
+          <p class="desc">Render placeholder when no product selected.</p>
+          <div class="foot">
+            <div class="meta"><span class="muted">SP: 1</span> <span class="lg-cmeter">1/5</span></div>
+            <div class="row"><span class="tag" data-flavor="discovered"><span class="flavor"></span>channel: void</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="task">
+          <div class="top">
+            <h4 class="title">Task 2 — Publish Selection</h4>
+            <span class="chip chip--progress"><span class="dot"></span> In progress</span>
+          </div>
+          <p class="desc">Publish selection via EventBus (Subject).</p>
+          <div class="foot">
+            <div class="meta"><span class="muted">SP: 2</span> <span class="lg-cmeter">2/5</span></div>
+            <div class="row"><span class="tag" data-flavor="practiced"><span class="flavor"></span>channel:
+                subject</span></div>
+          </div>
+        </article>
+
+        <article class="task">
+          <div class="top">
+            <h4 class="title">Task 3 — Detail View</h4>
+            <span class="chip chip--review"><span class="dot"></span> In review</span>
+          </div>
+          <p class="desc">Subscribe to EventBus and render ProductDetail.</p>
+          <div class="foot">
+            <div class="meta"><span class="muted">SP: 2</span> <span class="lg-cmeter">3/5</span></div>
+            <div class="row"><span class="tag" data-flavor="discovered"><span class="flavor"></span>event model:
+                type</span></div>
+          </div>
+        </article>
+
+        <article class="task">
+          <div class="top">
+            <h4 class="title">Task 4 — Acceptance Tests</h4>
+            <span class="chip chip--done"><span class="dot"></span> Done</span>
+          </div>
+          <p class="desc">E2E specs for scenarios outlined in the module.</p>
+          <div class="foot">
+            <div class="meta"><span class="muted">SP: 1</span> <span class="lg-cmeter">2/5</span></div>
+            <div class="row"><span class="tag" data-flavor="practiced"><span class="flavor"></span>event model:
+                class</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </section>
+
+  <!-- ======================
+         TEMPLATE
+         (chips like tabs + two sections)
+         ====================== -->
+  <section aria-labelledby="template-title">
+    <h2 id="template-title">Template</h2>
+
+    <nav class="section-chips" aria-label="Sections">
+      <button class="chip is-active">
+        <span class="chip__dot"></span>
+        Modules
+        <span class="chip__badge">2</span>
+      </button>
+      <button class="chip">Tasks <span class="chip__badge">4</span></button>
+      <button class="chip is-locked" aria-disabled="true">
+        <span class="chip__dot"></span>
+        Assessments
+      </button>
+    </nav>
+
+    <section class="lg-section" aria-labelledby="tpl-modules">
+      <h3 id="tpl-modules" class="title">Modules</h3>
+      <div class="stack">
+        <article class="card learning">
+          <div class="head">
+            <h4 class="title">EDA — Pub/Sub</h4>
+            <span class="chip chip--progress"><span class="dot"></span> In progress</span>
+          </div>
+          <div class="progress" style="--w:45%"><span></span></div>
+          <div class="tags">
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>event bus: channel: void</span>
+            <span class="tag" data-flavor="practiced"><span class="flavor"></span>event bus: channel: subject</span>
+          </div>
+        </article>
+        <article class="card learning">
+          <div class="head">
+            <h4 class="title">EDA — Event Model</h4>
+            <span class="chip chip--done"><span class="dot"></span> Done</span>
+          </div>
+          <div class="tags">
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>void</span>
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>primitive</span>
+            <span class="tag" data-flavor="practiced"><span class="flavor"></span>type</span>
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>class</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="lg-section" aria-labelledby="tpl-tasks">
+      <h3 id="tpl-tasks" class="title">Tasks</h3>
+      <div class="stack">
+        <article class="task">
+          <div class="top">
+            <h4 class="title">Task — Wire EventBus</h4>
+            <span class="chip chip--todo"><span class="dot"></span> To-Do</span>
+          </div>
+          <p class="desc">Define interface and create Subject-based channel.</p>
+          <div class="foot">
+            <div class="meta"><span class="muted">SP: 2</span> <span class="lg-cmeter">2/5</span></div>
+            <div class="row"><span class="tag" data-flavor="practiced"><span class="flavor"></span>channel:
+                subject</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </section>
+
+  <!-- ======================
+         PAGE (example assembled)
+         ====================== -->
+  <section aria-labelledby="page-title">
+    <h2 id="page-title">Example Page</h2>
+    <header>
+      <h1>EDA · Pub/Sub · Products</h1>
+      <p>Stay on track with modules, tasks and progress.</p>
+    </header>
+
+    <nav class="section-chips" aria-label="Sections">
+      <button class="chip is-active"><span class="chip__dot"></span> Overview</button>
+      <button class="chip">Modules <span class="chip__badge">2</span></button>
+      <button class="chip">Tasks <span class="chip__badge">4</span></button>
+      <button class="chip is-locked" aria-disabled="true">Assessments</button>
+    </nav>
+
+    <section class="lg-section" aria-labelledby="pg-mods">
+      <h3 id="pg-mods" class="title">Overview · Modules</h3>
+      <div class="stack">
+        <article class="card learning">
+          <div class="head">
+            <h4 class="title">EDA — Pub/Sub</h4>
+            <span class="chip chip--progress"><span class="dot"></span> In progress</span>
+          </div>
+          <div class="progress" style="--w:62%"><span></span></div>
+          <div class="tags">
+            <span class="tag" data-flavor="discovered"><span class="flavor"></span>channel: void</span>
+            <span class="tag" data-flavor="practiced"><span class="flavor"></span>channel: subject</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="lg-section" aria-labelledby="pg-tasks">
+      <h3 id="pg-tasks" class="title">Overview · Tasks</h3>
+      <div class="stack">
+        <article class="task">
+          <div class="top">
+            <h4 class="title">Implement ProductDetail subscription</h4>
+            <span class="chip chip--review"><span class="dot"></span> In review</span>
+          </div>
+          <p class="desc">Subscribe to selections, render selected product.</p>
+          <div class="foot">
+            <div class="meta"><span class="muted">SP: 2</span> <span class="lg-cmeter">3/5</span></div>
+            <div class="row"><span class="tag" data-flavor="discovered"><span class="flavor"></span>event model:
+                type</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </section>
+</main>
