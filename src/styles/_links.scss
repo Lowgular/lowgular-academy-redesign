@@ -1,0 +1,92 @@
+/* Base inline link (applies to <a> and .link utility) */
+a,
+.link {
+  color: var(--link);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.14em;
+  text-decoration-color: var(--link-underline);
+  text-decoration-skip-ink: auto;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease,
+    opacity 0.15s ease;
+
+  &:hover {
+    color: var(--link-hover);
+    text-decoration-color: var(--link-hover);
+  }
+  &:active {
+    opacity: 0.9;
+  }
+  &:visited {
+    color: var(--link-visited);
+    text-decoration-color: var(--link-underline);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px; /* keeps a clean focus halo around inline links */
+    text-decoration-color: var(--link);
+  }
+}
+
+/* Quiet link (no underline until hover; useful in meta UI, nav, tables) */
+.link--quiet {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration-line: underline;
+    text-decoration-color: var(--link-underline);
+  }
+}
+
+/* Muted link (subtle text; promotes surrounding content) */
+.link--muted {
+  color: var(--muted);
+  text-decoration-color: color-mix(in oklab, var(--muted) 40%, transparent);
+
+  &:hover {
+    color: var(--text);
+    text-decoration-color: var(--link-underline);
+  }
+}
+
+/* Contrast link (use on very dark blocks if you want stronger emphasis) */
+.link--contrast {
+  color: color-mix(in oklab, var(--brand) 92%, white);
+  text-decoration-color: color-mix(in oklab, var(--brand) 60%, transparent);
+
+  &:hover {
+    color: var(--brand);
+    text-decoration-color: var(--brand);
+  }
+}
+
+/* External link hint (optional) */
+.link--external::after {
+  content: "↗";
+  font-size: 0.9em;
+  margin-inline-start: 0.3em;
+  opacity: 0.85;
+}
+
+/* Icon alignment helper for inline SVGs/icons inside links */
+.link__icon,
+a > svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.12em;
+  margin-inline-start: 0.3em;
+}
+
+/* “Stretched” link (make an entire block clickable) */
+.stretched-link {
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}

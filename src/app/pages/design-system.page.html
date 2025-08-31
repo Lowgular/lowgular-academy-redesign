@@ -33,6 +33,38 @@
   <section aria-labelledby="atoms-title">
     <h2 id="atoms-title">Atoms</h2>
 
+
+    <article class="card">
+      <h3 class="title">Typography</h3>
+      <div class="stack">
+        <h1>Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <h4>Header 4</h4>
+        <h5>Header 5</h5>
+        <h6>Header 6</h6>
+        <p>Paragraph</p>
+        <p class="muted">Muted paragraph</p>
+        <p class="mono">Monospace paragraph</p>
+        <p class="muted mono">Muted monospace paragraph</p>
+        <small>Small text</small>
+      </div>
+    </article>
+
+
+    <!-- Stretched link inside a card -->
+    <article class="card">
+      <h3 class="title">Links</h3>
+      <div class="stack">
+        <p>Read the <a href="/platform/modules">Modules</a>.</p>
+        <p><a href="/docs" class="link--quiet">Docs</a> · <a href="/about" class="link--muted">About</a></p>
+        <p><a href="https://example.com" target="_blank" rel="noopener noreferrer" class="link--external">External</a>
+        </p>
+        <h3 class="title"><a href="/module/eda" class="stretched-link">EDA Pub/Sub</a></h3>
+        <p class="muted">Learn channel, event model, publishing…</p>
+      </div>
+    </article>
+
     <!-- Status Chips -->
     <article class="card">
       <h3 class="title">Status chips</h3>
@@ -44,14 +76,13 @@
       </div>
     </article>
 
-    <!-- Badges (alt status) -->
     <article class="card">
       <h3 class="title">Badges</h3>
       <div class="row">
-        <span class="lg-badge" data-status="todo">To-Do</span>
-        <span class="lg-badge" data-status="in-progress">In progress</span>
-        <span class="lg-badge" data-status="in-review">In review</span>
-        <span class="lg-badge" data-status="done">Done</span>
+        <span class="chip chip--todo">To-Do</span>
+        <span class="chip chip--progress">In progress</span>
+        <span class="chip chip--review">In review</span>
+        <span class="chip chip--done">Done</span>
       </div>
     </article>
 
@@ -192,6 +223,128 @@
           <li>Event Model</li>
           <li>Patterns</li>
         </ul>
+        <h3 class="title">Project To-Do split</h3>
+
+        <!-- DONE -->
+        <div class="row">
+          <span class="chip chip--done"><span class="dot" aria-hidden="true"></span> Done</span>
+        </div>
+        <ol class="todo-list" start="1">
+          <li class="todo-item is-done">
+            <div class="todo-line">
+              <span class="todo-title">Set up EventBus scaffold</span>
+              <small class="muted">setup</small>
+            </div>
+          </li>
+          <li class="todo-item is-done">
+            <div class="todo-line">
+              <span class="todo-title">Write unit tests for Channel</span>
+              <small class="muted">tests</small>
+            </div>
+          </li>
+        </ol>
+
+        <hr class="hairline" />
+
+        <!-- IN PROGRESS -->
+        <div class="row">
+          <span class="chip chip--progress"><span class="dot" aria-hidden="true"></span> In progress</span>
+        </div>
+        <ol class="todo-list" start="3">
+          <li class="todo-item is-progress">
+            <div class="todo-line">
+              <span class="todo-title">Implement Subject channel</span>
+              <span class="progress"><span style="--w: 60%"></span></span>
+            </div>
+          </li>
+        </ol>
+
+        <hr class="hairline" />
+
+        <!-- TO DO -->
+        <div class="row">
+          <span class="chip chip--todo"><span class="dot" aria-hidden="true"></span> To do</span>
+        </div>
+        <ol class="todo-list" start="4">
+          <li class="todo-item">
+            <div class="todo-line">
+              <span class="todo-title">Wire ProductDetail subscription</span>
+              <small class="muted">integration</small>
+            </div>
+          </li>
+          <li class="todo-item">
+            <div class="todo-line">
+              <span class="todo-title">Docs pass: event model examples</span>
+              <small class="muted">docs</small>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="title">Project To-Do compact</h3>
+
+        <ol class="todo-list todo-list--compact">
+          <li class="todo-item">
+            <div class="todo-line">
+              <div class="todo-main">
+                <span class="todo-title">Set up EventBus scaffold</span>
+                <small class="muted">setup</small>
+              </div>
+              <div class="todo-status">
+                <span class="chip chip--done chip--xs"><span class="dot" aria-hidden="true"></span> Done</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="todo-item">
+            <div class="todo-line">
+              <div class="todo-main">
+                <span class="todo-title">Write unit tests for Channel</span>
+                <small class="muted">tests</small>
+              </div>
+              <div class="todo-status">
+                <span class="chip chip--done chip--xs"><span class="dot" aria-hidden="true"></span> Done</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="todo-item">
+            <div class="todo-line">
+              <div class="todo-main">
+                <span class="todo-title">Implement Subject channel</span>
+                <small class="muted">integration</small>
+              </div>
+              <div class="todo-status">
+                <span class="chip chip--progress chip--xs"><span class="dot" aria-hidden="true"></span> In
+                  progress</span>
+                <small class="todo-percent mono muted">60%</small>
+              </div>
+            </div>
+          </li>
+
+          <li class="todo-item">
+            <div class="todo-line">
+              <div class="todo-main">
+                <span class="todo-title">Wire ProductDetail subscription</span>
+                <small class="muted">integration</small>
+              </div>
+              <div class="todo-status">
+                <span class="chip chip--todo chip--xs"><span class="dot" aria-hidden="true"></span> To do</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="todo-item">
+            <div class="todo-line">
+              <div class="todo-main">
+                <span class="todo-title">Docs pass: event model examples</span>
+                <small class="muted">docs</small>
+              </div>
+              <div class="todo-status">
+                <span class="chip chip--todo chip--xs"><span class="dot" aria-hidden="true"></span> To do</span>
+              </div>
+            </div>
+          </li>
+        </ol>
       </article>
     </section>
 
@@ -249,6 +402,62 @@
          ====================== -->
   <section aria-labelledby="organisms-title">
     <h2 id="organisms-title">Organisms</h2>
+
+    <section class="lg-pattern" aria-labelledby="pat-eventbus">
+      <header class="lg-pattern__head">
+        <h3 id="pat-eventbus" class="lg-pattern__title">Event Bus</h3>
+      </header>
+
+      <dl class="lg-concepts">
+        <!-- Concept: Channel -->
+        <div class="lg-concept">
+          <dt class="lg-concept__term">Channel</dt>
+          <dd class="lg-concept__def">
+            <ul class="lg-impls">
+              <li class="lg-impl" data-state="discovered">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="name mono">set</span>
+                <span class="lg-cmeter" aria-label="Complexity 2 of 5">L2</span>
+              </li>
+              <li class="lg-impl" data-state="practiced">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="name mono">subject</span>
+                <span class="lg-cmeter" aria-label="Complexity 3 of 5">L3</span>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+        <!-- Concept: Event model -->
+        <div class="lg-concept">
+          <dt class="lg-concept__term">Event model</dt>
+          <dd class="lg-concept__def">
+            <ul class="lg-impls">
+              <li class="lg-impl" data-state="discovered">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="name mono">void</span>
+                <span class="lg-cmeter" aria-label="Complexity 1 of 5">L1</span>
+              </li>
+              <li class="lg-impl" data-state="discovered">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="name mono">primitive</span>
+                <span class="lg-cmeter" aria-label="Complexity 2 of 5">L2</span>
+              </li>
+              <li class="lg-impl" data-state="practiced">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="name mono">type</span>
+                <span class="lg-cmeter" aria-label="Complexity 3 of 5">L3</span>
+              </li>
+              <li class="lg-impl" data-state="discovered">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="name mono">class</span>
+                <span class="lg-cmeter" aria-label="Complexity 4 of 5">L4</span>
+              </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
 
     <!-- Section: Modules -->
     <section class="lg-section" aria-labelledby="modules-title">
@@ -460,4 +669,24 @@
       </div>
     </section>
   </section>
+  <section class="lg-card auth-card" aria-labelledby="auth-title">
+    <h3 id="auth-title" class="title">Sign in</h3>
+
+    <form class="auth-form" action="/login" method="post" novalidate>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required
+          placeholder="you@company.com" />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required
+          placeholder="••••••••" />
+      </div>
+
+      <button class="lg-btn lg-btn--solid" data-variant="primary">Sign in</button>
+    </form>
+  </section>
+
 </main>

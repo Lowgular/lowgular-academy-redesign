@@ -1,0 +1,208 @@
+/* Vertical list */
+.lg-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px; /* tidy vertical rhythm */
+}
+.lg-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 0;
+}
+.lg-list .bullet {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--container-outline-weak);
+  margin-top: 6px; /* aligns dot with first line of text */
+}
+.lg-list .content {
+  min-width: 0;
+}
+.lg-list .content strong {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.lg-list .content .meta {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Color variants for bullets (optional) */
+.lg-list[data-variant="accent"] .bullet {
+  background: var(--accent);
+}
+.lg-list[data-variant="success"] .bullet {
+  background: var(--success);
+}
+.lg-list[data-variant="review"] .bullet {
+  background: var(--review);
+}
+.lg-list[data-variant="danger"] .bullet {
+  background: var(--danger);
+}
+
+/* Compact density option */
+.lg-list.is-compact {
+  gap: 6px;
+}
+.lg-list.is-compact li {
+  padding: 2px 0;
+}
+.lg-list.is-compact .bullet {
+  margin-top: 5px;
+}
+
+/* Horizontal list (inline) */
+.lg-list-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px; /* row gap / column gap */
+}
+.lg-list-inline li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.3;
+}
+.lg-list-inline li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--container-outline-weak);
+}
+/* Color variants for inline bullets */
+.lg-list-inline[data-variant="accent"] li::before {
+  background: var(--accent);
+}
+.lg-list-inline[data-variant="success"] li::before {
+  background: var(--success);
+}
+.lg-list-inline[data-variant="review"] li::before {
+  background: var(--review);
+}
+.lg-list-inline[data-variant="danger"] li::before {
+  background: var(--danger);
+}
+
+/* Sizes */
+.lg-list-inline.is-sm {
+  gap: 8px 10px;
+}
+.lg-list-inline.is-sm li {
+  gap: 6px;
+}
+.lg-list-inline.is-sm li::before {
+  width: 5px;
+  height: 5px;
+}
+
+/* Optional: make list items clickable without changing semantics */
+.lg-list a,
+.lg-list-inline a {
+  color: var(--text-high);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+.lg-list a:hover,
+.lg-list-inline a:hover {
+  background: color-mix(in oklab, var(--surface-2) 80%, transparent);
+}
+
+/* Ordered todo groups */
+.todo-list {
+  margin: 8px 0 0;
+  padding-left: 1.25rem; /* keep native <ol> numbers */
+  display: grid;
+  gap: 6px;
+}
+.todo-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--container-outline-weak);
+}
+.todo-list li:last-child {
+  border-bottom: 0;
+}
+.todo-list li::marker {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Item line */
+.todo-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+.todo-title {
+  font-weight: 600;
+}
+
+/* Status affordances */
+.todo-item.is-done .todo-title {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklab, var(--success) 60%, var(--muted));
+}
+.todo-item.is-progress .progress {
+  flex: 0 0 160px; /* keeps the bar tidy on the right */
+}
+
+/* Compact single ordered list with right-aligned status */
+.todo-list--compact {
+  margin: 8px 0 0;
+  padding-left: 1.25rem; /* keep native <ol> numbers */
+  display: grid;
+  gap: 4px;
+}
+.todo-list--compact > li {
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--container-outline-weak);
+}
+.todo-list--compact > li:last-child {
+  border-bottom: 0;
+}
+.todo-list--compact > li::marker {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Row layout: text left, status right */
+.todo-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: start;
+}
+.todo-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.todo-title {
+  font-weight: 600;
+}
+
+/* Status column */
+.todo-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.todo-percent {
+  font-size: 11px;
+}

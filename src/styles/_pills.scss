@@ -1,0 +1,24 @@
+/* Pills (tabs) — keep shapes but tone down to match */
+.lg-pills {
+  background: var(--surface-2);
+  border: 1px solid var(--container-outline-weak);
+}
+.lg-pill {
+  color: var(--muted);
+}
+.lg-pill.is-active {
+  background: color-mix(in oklab, var(--accent) 14%, var(--surface));
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* Complexity pill → subtle like your meta text */
+.lg-cmeter {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface-2);
+}

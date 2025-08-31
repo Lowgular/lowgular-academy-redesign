@@ -1,0 +1,48 @@
+/* Tags → align with your .tag scale & flavors */
+.lg-tag {
+  height: var(--tag-h);
+  padding: 0 var(--tag-px);
+  border-radius: var(--tag-br);
+  font-size: 12px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+.lg-tag[data-flavor="discovered"] {
+  border-color: color-mix(in oklab, var(--accent) 26%, transparent);
+}
+.lg-tag[data-flavor="practiced"] {
+  border-color: color-mix(in oklab, var(--success) 26%, transparent);
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--tag-h);
+  padding: 0 var(--tag-px);
+  border-radius: var(--tag-br);
+  font-size: 12px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.tag .flavor {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--muted);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06) inset;
+}
+.tag[data-flavor="discovered"] .flavor {
+  background: var(--accent);
+}
+.tag[data-flavor="practiced"] .flavor {
+  background: var(--success);
+}

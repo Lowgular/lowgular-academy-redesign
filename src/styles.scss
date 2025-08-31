@@ -1,53 +1,11 @@
-:root {
-  --bg: #0e0f12;
-  --surface: #16181d;
-  --surface-2: #1c1f26;
-  --text: #e9eef6;
-  --muted: #a3adbc;
-  --brand: oklch(61% 0.14 240);
-
-  --primary: oklch(62% 0.17 240); /* blue */
-  --status-progress: oklch(86% 0.12 100);
-  /* or, if you’re using a single accent token */
-  --accent: oklch(86% 0.12 100);
-  --danger: oklch(
-    73% 0.22 28
-  ); /* mango (used for “in progress” & discovered) */
-  --success: oklch(70% 0.15 160); /* green/teal (used for done & practiced) */
-  --review: oklch(65% 0.17 300); /* purple (used for in review) */
-  --neutral: #2a313c;
-
-  --card-shadow: 0 1px 0 rgba(255, 255, 255, 0.04),
-    0 8px 24px rgba(0, 0, 0, 0.35);
-  --radius: 10px;
-
-  --pad-1: 12px;
-  --pad-2: 16px;
-  --pad-3: 20px;
-  --gap-1: 8px;
-  --gap-2: 12px;
-  --gap-3: 16px;
-
-  --chip-h: 28px;
-  --chip-px: 10px;
-  --chip-br: 9999px;
-  --chip-fw: 700;
-
-  --tag-h: 26px;
-  --tag-px: 10px;
-  --tag-br: 9999px;
-
-  --container-w: 760px;
-
-  --container: var(--surface);
-  --container-2: var(--surface-2);
-  --line-weak: rgba(255, 255, 255, 0.06);
-  --text-high: var(--text);
-  --text-muted: var(--muted);
-  --container-outline-weak: rgba(255, 255, 255, 0.06);
-  --container-muted: color-mix(in oklab, var(--surface) 88%, transparent);
-}
-
+@use "./styles/_variables.scss" as *;
+@use "./styles/_buttons.scss" as *;
+@use "./styles/_chips.scss" as *;
+@use "./styles/_lists.scss" as *;
+@use "./styles/_text.scss" as *;
+@use "./styles/_tags.scss" as *;
+@use "./styles/_pills.scss" as *;
+@use "./styles/_links.scss" as *;
 * {
   box-sizing: border-box;
 }
@@ -228,130 +186,6 @@ body {
   gap: 24px;
 }
 
-header h1 {
-  font-family: Exo, Inter, system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: -0.02em;
-  margin: 0 0 4px;
-}
-header p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.lg-btn {
-  /* sizing */
-  --btn-h: 36px;
-  --btn-px: 14px;
-  --btn-br: var(--radius);
-  /* color var for variants */
-  --btn-c: var(--muted);
-
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: var(--btn-h);
-  padding: 0 var(--btn-px);
-  border-radius: var(--btn-br);
-  border: 1px solid var(--container-outline-weak);
-  background: var(--surface-2);
-  color: var(--text-high);
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1;
-  text-decoration: none;
-  cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease,
-    color 0.15s ease, box-shadow 0.15s ease, transform 0.06s ease-in-out;
-}
-
-.lg-btn:hover {
-  border-color: color-mix(
-    in oklab,
-    var(--btn-c) 22%,
-    var(--container-outline-weak)
-  );
-}
-.lg-btn:active {
-  transform: translateY(1px);
-}
-.lg-btn:disabled,
-.lg-btn[aria-disabled="true"] {
-  opacity: 0.55;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.lg-btn .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: currentColor;
-}
-
-/* Variants (pick color) */
-.lg-btn[data-variant="primary"] {
-  --btn-c: var(--primary);
-}
-.lg-btn[data-variant="progress"] {
-  --btn-c: var(--accent);
-} /* "In progress" */
-.lg-btn[data-variant="review"] {
-  --btn-c: var(--review);
-} /* "In review"   */
-.lg-btn[data-variant="success"] {
-  --btn-c: var(--success);
-}
-.lg-btn[data-variant="danger"] {
-  --btn-c: var(--danger);
-}
-.lg-btn[data-variant="neutral"] {
-  --btn-c: var(--muted);
-}
-
-/* Styles: soft / solid / outline */
-.lg-btn--soft {
-  background: color-mix(in oklab, var(--btn-c) 18%, transparent);
-  border-color: color-mix(in oklab, var(--btn-c) 26%, transparent);
-  color: var(--btn-c);
-}
-.lg-btn--soft:hover {
-  background: color-mix(in oklab, var(--btn-c) 24%, transparent);
-  border-color: color-mix(in oklab, var(--btn-c) 36%, transparent);
-}
-
-.lg-btn--solid {
-  background: var(--btn-c);
-  border-color: color-mix(in oklab, var(--btn-c) 40%, black);
-  color: white;
-}
-.lg-btn--solid:hover {
-  background: color-mix(in oklab, var(--btn-c) 86%, white);
-}
-
-.lg-btn--outline {
-  background: transparent;
-  color: var(--btn-c);
-  border-color: color-mix(in oklab, var(--btn-c) 50%, transparent);
-}
-.lg-btn--outline:hover {
-  background: color-mix(in oklab, var(--btn-c) 14%, var(--surface));
-  border-color: var(--btn-c);
-}
-
-/* Sizes */
-.lg-btn.is-sm {
-  --btn-h: 30px;
-  --btn-px: 10px;
-  font-size: 0.88rem;
-}
-.lg-btn.is-lg {
-  --btn-h: 42px;
-  --btn-px: 18px;
-  font-size: 1rem;
-}
-
 /* Simple layout helper for demos */
 .btn-row {
   display: flex;
@@ -362,13 +196,6 @@ header p {
 section {
   display: grid;
   gap: 14px;
-}
-section h2 {
-  font-family: Exo, Inter, system-ui, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-size: 18px;
-  margin: 0;
 }
 
 /* Cards / Tasks containers */
@@ -397,179 +224,6 @@ section h2 {
   gap: var(--gap-2);
   justify-content: space-between;
 }
-.title {
-  margin: 0;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-/* Status chip (global) */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: var(--chip-h);
-  padding: 0 var(--chip-px);
-  border-radius: var(--chip-br);
-  font-size: 12px;
-  font-weight: var(--chip-fw);
-  letter-spacing: 0.02em;
-  border: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  white-space: nowrap;
-}
-.chip .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: currentColor;
-}
-.chip--todo {
-  color: #c7cfdb;
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.06);
-}
-.chip--progress {
-  color: var(--accent);
-  background: color-mix(in oklab, var(--accent) 18%, transparent);
-  border-color: color-mix(in oklab, var(--accent) 26%, transparent);
-}
-.chip--done {
-  color: var(--success);
-  background: color-mix(in oklab, var(--success) 18%, transparent);
-  border-color: color-mix(in oklab, var(--success) 26%, transparent);
-}
-.chip--review {
-  color: var(--review);
-  background: color-mix(in oklab, var(--review) 18%, transparent);
-  border-color: color-mix(in oklab, var(--review) 26%, transparent);
-}
-
-/* ===========================
-   Lists (vertical & horizontal)
-   =========================== */
-
-/* Vertical list */
-.lg-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px; /* tidy vertical rhythm */
-}
-.lg-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 4px 0;
-}
-.lg-list .bullet {
-  flex: 0 0 8px;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--container-outline-weak);
-  margin-top: 6px; /* aligns dot with first line of text */
-}
-.lg-list .content {
-  min-width: 0;
-}
-.lg-list .content strong {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.lg-list .content .meta {
-  display: block;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* Color variants for bullets (optional) */
-.lg-list[data-variant="accent"] .bullet {
-  background: var(--accent);
-}
-.lg-list[data-variant="success"] .bullet {
-  background: var(--success);
-}
-.lg-list[data-variant="review"] .bullet {
-  background: var(--review);
-}
-.lg-list[data-variant="danger"] .bullet {
-  background: var(--danger);
-}
-
-/* Compact density option */
-.lg-list.is-compact {
-  gap: 6px;
-}
-.lg-list.is-compact li {
-  padding: 2px 0;
-}
-.lg-list.is-compact .bullet {
-  margin-top: 5px;
-}
-
-/* Horizontal list (inline) */
-.lg-list-inline {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 14px; /* row gap / column gap */
-}
-.lg-list-inline li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  line-height: 1.3;
-}
-.lg-list-inline li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--container-outline-weak);
-}
-/* Color variants for inline bullets */
-.lg-list-inline[data-variant="accent"] li::before {
-  background: var(--accent);
-}
-.lg-list-inline[data-variant="success"] li::before {
-  background: var(--success);
-}
-.lg-list-inline[data-variant="review"] li::before {
-  background: var(--review);
-}
-.lg-list-inline[data-variant="danger"] li::before {
-  background: var(--danger);
-}
-
-/* Sizes */
-.lg-list-inline.is-sm {
-  gap: 8px 10px;
-}
-.lg-list-inline.is-sm li {
-  gap: 6px;
-}
-.lg-list-inline.is-sm li::before {
-  width: 5px;
-  height: 5px;
-}
-
-/* Optional: make list items clickable without changing semantics */
-.lg-list a,
-.lg-list-inline a {
-  color: var(--text-high);
-  text-decoration: none;
-  border-radius: 6px;
-  padding: 2px 4px;
-}
-.lg-list a:hover,
-.lg-list-inline a:hover {
-  background: color-mix(in oklab, var(--surface-2) 80%, transparent);
-}
 
 /* Progress (for "in progress" examples) */
 .progress {
@@ -589,36 +243,103 @@ section h2 {
   width: var(--w, 50%);
 }
 
-/* Tags */
-.tags {
+/* Pattern container (not a card: light rails & dividers) */
+.lg-pattern {
+  border: 1px solid var(--container-outline-weak);
+  border-radius: var(--radius);
+  background: color-mix(in oklab, var(--surface) 40%, transparent);
+  overflow: hidden;
+  margin: 0; /* fits inside .wrap gaps */
+}
+.lg-pattern + .lg-pattern {
+  margin-top: 12px;
+}
+
+.lg-pattern__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--pad-2);
+  background: color-mix(in oklab, var(--surface-2) 60%, transparent);
+  border-bottom: 1px dashed var(--container-outline-weak);
+}
+.lg-pattern__title {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Concepts as a definition list */
+.lg-concepts {
+  margin: 0;
+  padding: 0;
+}
+.lg-concept {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 8px 16px;
+  padding: var(--pad-2);
+  align-items: start;
+  border-top: 1px solid var(--container-outline-weak);
+}
+.lg-concept:first-child {
+  border-top: 0;
+}
+
+.lg-concept__term {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.lg-concept__def {
+  margin: 0;
+}
+
+/* Implementations list */
+.lg-impls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px 12px;
 }
-.tag {
+
+/* Implementation chip */
+.lg-impl {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: var(--tag-h);
-  padding: 0 var(--tag-px);
-  border-radius: var(--tag-br);
-  font-size: 12px;
-  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 9999px;
   background: var(--surface-2);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--container-outline-weak);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--text-high);
 }
-.tag .flavor {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.lg-impl .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
   background: var(--muted);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06) inset;
 }
-.tag[data-flavor="discovered"] .flavor {
+.lg-impl[data-state="discovered"] .dot {
   background: var(--accent);
 }
-.tag[data-flavor="practiced"] .flavor {
+.lg-impl[data-state="practiced"] .dot {
   background: var(--success);
+}
+
+.lg-impl .name {
+  font-weight: 600;
+}
+
+/* Responsive: stack concept/impls on small screens */
+@media (max-width: 560px) {
+  .lg-concept {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Task item */
@@ -679,13 +400,7 @@ section h2 {
   gap: var(--gap-2);
   align-items: center;
 }
-.muted {
-  color: var(--muted);
-}
-.mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-}
+
 .hairline {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   margin: 6px 0 0;
@@ -831,89 +546,45 @@ section h2 {
   border-radius: 2px;
 }
 
-/* Badges → align with your .chip scale */
-.lg-badge {
-  height: var(--chip-h);
-  padding: 0 var(--chip-px);
-  border-radius: var(--chip-br);
-  font-size: 12px;
-  font-weight: var(--chip-fw);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  background: rgba(255, 255, 255, 0.03);
-  color: #c7cfdb;
-}
-.lg-badge[data-status="todo"] {
-  color: #c7cfdb;
-}
-.lg-badge[data-status="in-progress"] {
-  color: var(--accent);
-  background: color-mix(in oklab, var(--accent) 18%, transparent);
-  border-color: color-mix(in oklab, var(--accent) 26%, transparent);
-}
-.lg-badge[data-status="in-review"] {
-  color: var(--review);
-  background: color-mix(in oklab, var(--review) 18%, transparent);
-  border-color: color-mix(in oklab, var(--review) 26%, transparent);
-}
-.lg-badge[data-status="done"] {
-  color: var(--success);
-  background: color-mix(in oklab, var(--success) 18%, transparent);
-  border-color: color-mix(in oklab, var(--success) 26%, transparent);
-}
-
-/* Tags → align with your .tag scale & flavors */
-.lg-tag {
-  height: var(--tag-h);
-  padding: 0 var(--tag-px);
-  border-radius: var(--tag-br);
-  font-size: 12px;
-  background: var(--surface-2);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: var(--text);
-}
-.lg-tag[data-flavor="discovered"] {
-  border-color: color-mix(in oklab, var(--accent) 26%, transparent);
-}
-.lg-tag[data-flavor="practiced"] {
-  border-color: color-mix(in oklab, var(--success) 26%, transparent);
-}
-
-/* Complexity pill → subtle like your meta text */
-.lg-cmeter {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  padding: 2px 8px;
-  border-radius: 9999px;
-  border: 1px solid var(--container-outline-weak);
-  background: var(--surface-2);
-}
-
-/* Pills (tabs) — keep shapes but tone down to match */
-.lg-pills {
-  background: var(--surface-2);
-  border: 1px solid var(--container-outline-weak);
-}
-.lg-pill {
-  color: var(--muted);
-}
-.lg-pill.is-active {
-  background: color-mix(in oklab, var(--accent) 14%, var(--surface));
-  border-color: var(--accent);
-  color: var(--text);
-}
-
 /* Navbar demo block (if present): use your navbar styling instead */
 .lg-demo-nav {
   background: color-mix(in oklab, var(--surface) 86%, transparent);
   border: 1px dashed var(--container-outline-weak);
 }
 
-/* Optional: compact on very small screens */
-@media (max-width: 420px) {
-  .chip {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.85rem;
-  }
+/* Auth card spacing */
+.auth-card {
+  display: grid;
+  gap: var(--gap-2);
+}
+
+/* Fields */
+.auth-form {
+  display: grid;
+  gap: var(--gap-2);
+}
+.auth-form .field {
+  display: grid;
+  gap: 6px;
+}
+.auth-form .field label {
+  font-weight: 600;
+  color: var(--text);
+}
+.auth-form .field input {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface-2);
+  color: var(--text);
+  padding: 10px 12px;
+  font: inherit;
+}
+.auth-form .field input::placeholder {
+  color: color-mix(in oklab, var(--muted) 80%, transparent);
+}
+.auth-form .field input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 24%, transparent);
+  outline: none;
 }
