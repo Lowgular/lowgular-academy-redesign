@@ -1,0 +1,43 @@
+<section aria-labelledby="task-start" class="block">
+  <article class="card task-start" aria-labelledby="task-title">
+    <header class="task-start__head">
+      <a class="link-back" [routerLink]="'/course-detail'">← Back</a>
+      <h1 id="task-title" class="title">EDA — Pub/Sub — Products</h1>
+      <div class="row article__meta">
+        <span class="chip chip--progress"><span class="dot"></span> Pulled</span>
+        <!-- <span class="muted">~30 min</span> -->
+        <!-- <span class="success">Easy</span> -->
+      </div>
+    </header>
+
+    <div class="alert alert--info" role="status">
+      <div class="alert__icon">i</div>
+      <div class="alert__content">
+        <strong class="alert__title">You have cloned the project on your local machine.</strong>
+        <span class="alert__msg"> Now you need to solve the task and push your solution.</span>
+      </div>
+    </div>
+
+    <div class="cmd-box" role="group" aria-labelledby="cmd-label" data-flavor="primary">
+      <span id="cmd-label" class="sr-only">Push command</span>
+      <code class="cmd mono">npx @lowgular/cli@latest push</code>
+
+      <button class="lg-btn lg-btn--solid" data-variant="primary" aria-label="Copy command">Copy</button>
+    </div>
+
+    <hr class="block__divider">
+
+
+    <p class="small">
+      Heaving trouble finding the solution? Try to run the clone command again:
+    </p>
+
+    <div class="cmd-box" role="group" aria-labelledby="cmd-label">
+      <span id="cmd-label" class="sr-only">Forgot clone command?</span>
+      <code class="cmd mono">npx @lowgular/cli@latest clone eda-pub-sub</code>
+
+      <button class="lg-btn lg-btn--outline" data-variant="neutral" aria-label="Copy command">Copy</button>
+    </div>
+
+  </article>
+</section>

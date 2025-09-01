@@ -240,8 +240,7 @@
     Project
   </h2>
   <div class="stack" role="list">
-    <!-- Task: TODO -->
-    <article class="task" role="listitem" aria-labelledby="t1-title">
+    <!-- <article class="task" role="listitem" aria-labelledby="t1-title">
       <div class="top">
         <h3 class="title" id="t1-title">Task 1 — Show placeholder product</h3>
         <span class="chip chip--done" aria-label="Status: Done"><span class="dot" aria-hidden="true"></span>Done</span>
@@ -252,7 +251,6 @@
       </p>
       <div class="foot">
         <div class="tags" aria-label="Tags">
-          <!-- tags optional for non-done tasks -->
           <span class="tag" data-flavor="success" title="Discovered">
             <span class="flavor" aria-hidden="true"></span>
             <span class="mono">event bus: channel: void</span>
@@ -273,7 +271,6 @@
       </div>
     </article>
 
-    <!-- Task: IN PROGRESS -->
     <article class="task" role="listitem" aria-labelledby="t2-title">
       <div class="top">
         <h3 class="title" id="t2-title">
@@ -286,19 +283,9 @@
         ProductList publishes selection events with product id.
       </p>
       <div class="foot">
-        <!-- <div class="meta">
-            <span class="mono">channel:</span><span>products:selected</span>
-          </div> -->
-        <!-- <div class="tags" aria-label="Tags">
-            <span class="tag" data-flavor="success" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event bus: channel: void</span>
-            </span>
-          </div> -->
       </div>
     </article>
 
-    <!-- Task: IN REVIEW -->
     <article class="task" role="listitem" aria-labelledby="t3-title">
       <div class="top">
         <h3 class="title" id="t3-title">
@@ -312,20 +299,11 @@
         info.
       </p>
       <div class="foot">
-        <!-- <div class="meta">
-            <span class="mono">coverage:</span><span>unit + e2e</span>
-          </div> -->
-        <!-- <div class="tags" aria-label="Tags">
-            <span class="tag" data-flavor="discovered" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event bus: channel: void</span>
-            </span>
-          </div> -->
       </div>
-    </article>
+    </article> -->
 
     <!-- Task: DONE -->
-    <article class="task" role="listitem" aria-labelledby="t4-title">
+    <article class="task linkable" role="listitem" aria-labelledby="t4-title" [routerLink]="['task/1']">
       <div class="top">
         <h3 class="title" id="t4-title">Task 4 — E2E flow green</h3>
         <span class="chip chip--todo" aria-label="Status: To do"><span class="dot"

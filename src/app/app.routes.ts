@@ -4,6 +4,8 @@ import { ContentItemSequencePage } from './pages/content-item-sequence.page';
 import { CourseDetailPage } from './pages/course-detail.page';
 import { CourseWrapperPage } from './pages/course-wrapper.page';
 import { DesignSystemPage } from './pages/design-system.page';
+import { TaskFirstPulledPage } from './pages/task-first-pulled.page';
+import { TaskFirstPage } from './pages/task-first.page';
 
 export const routes: Routes = [
   {
@@ -25,6 +27,14 @@ export const routes: Routes = [
       {
         path: 'content-item-sequence',
         component: ContentItemSequencePage,
+      },
+      {
+        path: 'task/1',
+        component: TaskFirstPage,
+      },
+      {
+        path: 'task/1/pulled',
+        component: TaskFirstPulledPage,
       },
     ],
   },

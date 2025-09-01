@@ -1,0 +1,26 @@
+<section aria-labelledby="task-start" class="block">
+  <article class="card task-start" aria-labelledby="task-title">
+    <header class="task-start__head">
+      <a class="link-back" [routerLink]="'/course-detail'">← Back</a>
+      <h1 id="task-title" class="title">EDA — Pub/Sub — Products</h1>
+      <div class="row article__meta">
+        <span class="chip chip--todo"><span class="dot"></span> To Do</span>
+        <span class="muted">~30 min</span>
+        <!-- <span class="success">Easy</span> -->
+      </div>
+    </header>
+
+    <div class="cmd-box" role="group" aria-labelledby="cmd-label" data-flavor="primary">
+      <span id="cmd-label" class="sr-only">Clone command</span>
+      <code class="cmd mono">npx @lowgular/cli@latest clone eda-pub-sub</code>
+
+      <button class="lg-btn lg-btn--solid" data-variant="primary" aria-label="Copy command">Copy</button>
+    </div>
+
+    <p class="muted small">
+      This will clone the project into your current folder. When it finishes,
+      open the folder in your IDE and read <span class="mono">README.md</span>.
+      Your task will be marked <strong>In&nbsp;Progress</strong> automatically.
+    </p>
+  </article>
+</section>
