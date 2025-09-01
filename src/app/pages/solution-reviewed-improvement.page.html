@@ -1,0 +1,33 @@
+<article class="card" aria-labelledby="task-title">
+  <header class="task-start__head task-header">
+    <div class="row">
+      <a class="link-back" [routerLink]="'/course-detail'">← Back</a>
+    </div>
+
+    <h1 id="task-title" class="title">EDA — Pub/Sub — Products</h1>
+
+    <div class="row article__meta">
+      <span class="chip chip--progress"><span class="dot"></span> Reviewed</span>
+      <!-- <span class="muted">We strongly recommend improving your solution.</span> -->
+    </div>
+
+
+    <div class="task-toolbar" role="toolbar" aria-label="Task actions">
+      <button type="button" class="lg-btn lg-btn--outline" data-variant="neutral" [routerLink]="'/course-detail'">
+        Merge anyway
+      </button>
+    </div>
+  </header>
+
+  <aside class="lg-callout lg-callout--warning" role="note">
+    <strong>Improve solution according to the comments and push again.</strong> <span class="muted">Alternatively you
+      may merge
+      without improvements.</span>
+  </aside>
+
+
+  <hr class="block__divider">
+
+  <div id="container" #container></div>
+
+</article>

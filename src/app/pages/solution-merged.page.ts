@@ -10,7 +10,7 @@ import {
 import { RouterLink } from '@angular/router';
 
 @Component({
-  templateUrl: './solution-self-review.page.html',
+  templateUrl: './solution-merged.page.html',
   standalone: true,
   imports: [RouterLink],
   styles: [
@@ -40,44 +40,10 @@ import { RouterLink } from '@angular/router';
         flex: 1; /* Take remaining height */
         min-height: 0; /* Allow container to shrink */
       }
-
-      /* Layout: stack on mobile, toolbar on the right for wider screens */
-      .task-header {
-        display: grid;
-        gap: 12px;
-      }
-      @media (min-width: 720px) {
-        .task-header {
-          grid-template-columns: 1fr auto;
-          grid-template-areas:
-            'back actions'
-            'title actions'
-            'meta  actions';
-          align-items: start;
-        }
-        .task-header .link-back {
-          grid-area: back;
-        }
-        .task-header .title {
-          grid-area: title;
-        }
-        .task-header .article__meta {
-          grid-area: meta;
-        }
-        .task-header .task-toolbar {
-          grid-area: actions;
-        }
-      }
-      .task-toolbar {
-        display: inline-flex;
-        gap: 8px;
-        align-items: center;
-        margin-left: auto; /* keeps it right-aligned when stacking */
-      }
     `,
   ],
 })
-export class SolutionSelfReviewPage implements AfterViewInit {
+export class SolutionMergedPage implements AfterViewInit {
   @ViewChild('container') container!: ElementRef;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}

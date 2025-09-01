@@ -8,5 +8,15 @@
   display: flex;
 }
 .lg-callout--info {
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--info);
+}
+.lg-callout--warning {
+  border-left: 4px solid var(--warning);
+}
+.lg-callout--danger {
+  border-left: 4px solid var(--danger);
+}
+
+.lg-callout--success {
+  border-left: 4px solid var(--success);
 }

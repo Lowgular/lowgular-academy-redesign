@@ -10,7 +10,7 @@ import {
 import { RouterLink } from '@angular/router';
 
 @Component({
-  templateUrl: './solution-self-review.page.html',
+  templateUrl: './solution-reviewed-improvement.page.html',
   standalone: true,
   imports: [RouterLink],
   styles: [
@@ -77,7 +77,7 @@ import { RouterLink } from '@angular/router';
     `,
   ],
 })
-export class SolutionSelfReviewPage implements AfterViewInit {
+export class SolutionReviewedImprovementPage implements AfterViewInit {
   @ViewChild('container') container!: ElementRef;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}

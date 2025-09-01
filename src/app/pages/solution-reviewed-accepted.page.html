@@ -1,0 +1,31 @@
+<article class="card" aria-labelledby="task-title">
+  <header class="task-start__head task-header">
+    <div class="row">
+      <a class="link-back" [routerLink]="'/course-detail'">← Back</a>
+    </div>
+
+    <h1 id="task-title" class="title">EDA — Pub/Sub — Products</h1>
+
+    <div class="row article__meta">
+      <span class="chip chip--progress"><span class="dot"></span> Reviewed</span>
+      <span class="muted">We will review your solution withint 24 hours.</span>
+    </div>
+
+
+    <div class="task-toolbar" role="toolbar" aria-label="Task actions">
+      <button type="button" class="lg-btn lg-btn--solid" data-variant="success" [routerLink]="'/course-detail'">
+        Merge
+      </button>
+    </div>
+  </header>
+
+  <aside class="lg-callout lg-callout--success" role="note">
+    <strong>Merge to finish this task.</strong> After merging, you can start working on the next task.
+  </aside>
+
+
+  <hr class="block__divider">
+
+  <div id="container" #container></div>
+
+</article>

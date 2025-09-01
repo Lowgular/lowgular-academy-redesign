@@ -7,28 +7,22 @@
     <h1 id="task-title" class="title">EDA — Pub/Sub — Products</h1>
 
     <div class="row article__meta">
-      <span class="chip chip--progress">
-        <span class="dot" aria-hidden="true"></span> Pushed
-      </span>
+      <span class="chip chip--review"><span class="dot"></span> Review pending</span>
+      <span class="muted">We will review your solution withint 24 hours.</span>
     </div>
 
-    <!-- Toolbar -->
+
     <div class="task-toolbar" role="toolbar" aria-label="Task actions">
-      <button type="button" class="lg-btn lg-btn--solid" data-variant="primary"
-        [routerLink]="'/course-detail/solution/requested-review'">
-        Request review
-      </button>
       <button type="button" class="lg-btn lg-btn--outline" data-variant="neutral"
-        [routerLink]="'/course-detail/solution/merged'">
-        Merge
+        [routerLink]="'/course-detail/solution/self-review'">
+        Withdraw request
       </button>
     </div>
   </header>
 
   <aside class="lg-callout lg-callout--info" role="status" aria-live="polite">
-    <strong>Check your solution and request the review.</strong>
-    <span class="muted">Alternatively, you may merge without the review, but you will not be able to request it
-      later.</span>
+    <strong>You can’t push your solution until the review finishes.</strong>
+    <span class="muted">Withdraw to keep editing, or sit tight for feedback.</span>
   </aside>
 
 

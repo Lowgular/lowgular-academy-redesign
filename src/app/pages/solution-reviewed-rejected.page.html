@@ -1,0 +1,30 @@
+<article class="card" aria-labelledby="task-title">
+  <header class="task-start__head task-header">
+    <div class="row">
+      <a class="link-back" [routerLink]="'/course-detail'">← Back</a>
+    </div>
+
+    <h1 id="task-title" class="title">EDA — Pub/Sub — Products</h1>
+
+    <div class="row article__meta">
+      <span class="chip chip--progress"><span class="dot"></span> Reviewed</span>
+    </div>
+
+
+    <div class="task-toolbar" role="toolbar" aria-label="Task actions">
+      <button type="button" class="lg-btn lg-btn--solid" data-variant="muted" disabled>
+        Can't merge
+      </button>
+    </div>
+  </header>
+
+  <aside class="lg-callout lg-callout--danger" role="note">
+    <strong>Fix the solution and push again.</strong> Your solution contains critical issues and cannot be merged
+  </aside>
+
+
+  <hr class="block__divider">
+
+  <div id="container" #container></div>
+
+</article>
