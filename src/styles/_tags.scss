@@ -8,13 +8,33 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: var(--text);
 }
-.lg-tag[data-flavor="discovered"] {
-  border-color: color-mix(in oklab, var(--accent) 26%, transparent);
+
+.lg-tag[data-flavor="muted"] {
+  border-color: color-mix(in oklab, var(--muted) 26%, transparent);
 }
-.lg-tag[data-flavor="practiced"] {
-  border-color: color-mix(in oklab, var(--success) 26%, transparent);
+.tag[data-flavor="muted"] .flavor {
+  background: var(--muted);
 }
 
+.lg-tag[data-flavor="info"] {
+  border-color: color-mix(in oklab, var(--info) 26%, transparent);
+}
+.tag[data-flavor="info"] .flavor {
+  background: var(--info);
+}
+
+.lg-tag[data-flavor="success"] {
+  border-color: color-mix(in oklab, var(--success) 26%, transparent);
+}
+.tag[data-flavor="success"] .flavor {
+  background: var(--success);
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 /* Tags */
 .tags {
   display: flex;
@@ -39,10 +59,4 @@
   border-radius: 50%;
   background: var(--muted);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06) inset;
-}
-.tag[data-flavor="discovered"] .flavor {
-  background: var(--accent);
-}
-.tag[data-flavor="practiced"] .flavor {
-  background: var(--success);
 }
