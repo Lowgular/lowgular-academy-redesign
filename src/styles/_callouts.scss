@@ -1,0 +1,12 @@
+.lg-callout {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--container-outline-weak);
+  border-radius: 8px;
+  background: var(--surface-2);
+  gap: 4px;
+  display: flex;
+}
+.lg-callout--info {
+  border-left: 4px solid var(--primary);
+}

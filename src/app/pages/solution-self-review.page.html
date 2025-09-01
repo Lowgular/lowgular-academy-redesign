@@ -1,0 +1,35 @@
+<article class="card" aria-labelledby="task-title">
+  <header class="task-start__head task-header">
+    <a class="link-back" [routerLink]="'/course-detail'">← Back</a>
+
+    <h1 id="task-title" class="title">EDA — Pub/Sub — Products</h1>
+
+    <div class="row article__meta">
+      <span class="chip chip--progress">
+        <span class="dot" aria-hidden="true"></span> Pushed
+      </span>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="task-toolbar" role="toolbar" aria-label="Task actions">
+      <button type="button" class="lg-btn lg-btn--solid" data-variant="primary">
+        Request review
+      </button>
+      <button type="button" class="lg-btn lg-btn--outline" data-variant="neutral">
+        Merge
+      </button>
+    </div>
+  </header>
+
+  <aside class="lg-callout lg-callout--info" role="status" aria-live="polite">
+    <strong>Check your solution and request the review.</strong>
+    <span class="muted">Alternatively, you may merge without the review, but you will not be able to request it
+      later.</span>
+  </aside>
+
+
+  <hr class="block__divider">
+
+  <div id="container" #container></div>
+
+</article>
