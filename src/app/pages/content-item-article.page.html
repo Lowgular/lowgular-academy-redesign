@@ -1,0 +1,86 @@
+<article class="card article" aria-labelledby="article-title">
+  <header class="article__head">
+    <a class="link-back" href="..">← Back</a>
+    <h1 id="article-title" class="title">Article title</h1>
+    <span class="chip chip--progress"><span class="dot"></span>Reading</span>
+  </header>
+
+  <div class="article__body markdown">
+    <p>The callback approach is one of the simplest ways to subscribe to events.</p>
+    <p>It involves passing a function that will be called whenever an event is published.</p>
+    <p>This approach is straightforward and easy to understand, making it a good starting point for many applications.
+    </p>
+    <p>Here's a simple example of how you might implement a callback-based event bus:</p>
+    <pre class="language-ts" tabindex="0">
+        <code class="language-ts" [innerHTML]="`@Injectable{
+  ...
+        }
+export class CallbackEventBus {
+  publish(event: Event): void {{ '{' }}{{ '}' }}
+  subscribe(callback: (event: Event) =&gt; void): void {{ '{' }}{{ '}' }}
+}`">
+</code></pre>
+    <p>In this example:</p>
+    <ul>
+      <li>The <code>publish</code> method calls each registered callback with the event</li>
+      <li>The <code>subscribe</code> method adds a new callback that will be invoked when event occurs</li>
+    </ul>
+    <p><strong>Pros:</strong></p>
+    <ul>
+      <li>✅ Simple and easy to understand</li>
+      <li>✅ Low overhead - just function calls</li>
+      <li>✅ Familiar to most developers</li>
+      <li>✅ No additional dependencies</li>
+      <li>✅ Clean Public API that is unlikely to change</li>
+      <li>✅ Easy to debug and trace</li>
+    </ul>
+    <p><strong>Cons:</strong></p>
+    <ul>
+      <li>❌ No built-in error handling</li>
+      <li>❌ No way to filter or transform events</li>
+      <li>❌ Boilerplate for registering the callback and unsubscribing</li>
+      <li>❌ Callbacks can be hard to manage in complex scenarios like: joining, prioritising, replay, batching,
+        filtering</li>
+    </ul>
+    <p>The good news is that we get a stable, well-defined API that's easy to understand and use.</p>
+    <p>The bad news? We have to write code that's already handled natively by reactive solutions.</p>
+
+    <blockquote class="hairline"
+      style="border-left:4px solid var(--container-outline-weak); padding:8px 12px; background:var(--surface-2); border-radius:6px;">
+      Tip: Using callbacks in <strong>EventBus</strong> is like building a car when you already have a perfectly good
+      engine—sometimes that’s exactly what you need.
+    </blockquote>
+  </div>
+</article>
+<!-- <article>
+  <header class="article__head">
+    <nav>
+      <a [routerLink]="['..']" class="link-back">← Back</a>
+    </nav>
+    <h1 class="title">Callback-based Event Bus</h1>
+    <p class="muted">A simple subscription model using function callbacks for publishing and listening to events.</p>
+
+    <div class="row article__meta">
+      <span class="chip chip--progress" data-reading-chip>
+        <span class="dot"></span> Reading
+      </span>
+
+      <span class="muted">~6 min read</span>
+      <span class="level level--star" aria-label="Level 2">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+        <span class="n">2</span>
+      </span>
+    </div>
+  </header>
+
+  <section class="card article">
+
+    <div class="card article__body markdown" id="article">
+      
+      
+      <div id="article-end" class="sr-only">end</div>
+    </div>
+  </section>
+</article> -->

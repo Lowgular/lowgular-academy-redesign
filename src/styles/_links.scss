@@ -1,4 +1,10 @@
 /* Base inline link (applies to <a> and .link utility) */
+.linkable {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 a,
 .link {
   color: var(--link);

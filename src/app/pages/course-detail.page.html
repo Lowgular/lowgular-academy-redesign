@@ -1,399 +1,352 @@
-<header class="lg-navbar" role="banner">
-  <div class="lg-navbar__inner">
-    <a class="lg-navbar__brand" href="/" aria-label="Lowgular Home">
-      <!-- If you can inline your SVG, you can recolor it via CSS -->
-      <!-- Paste your SVG inside the next span and give it class="lg-logo" -->
-      <span class="lg-logo" aria-hidden="true">
-        <!-- LOWGULAR LOGO SVG HERE -->
-        <!-- or fallback: -->
-        <img src="assets/images/lowgular-logo.svg" alt="" />
-      </span>
-      <span class="lg-wordmark">LOWGULAR</span>
-    </a>
+<section aria-labelledby="achievements" class="block">
+  <h2 id="achievements">
+    Achievements
+  </h2>
+  <section class="lg-pattern" aria-labelledby="pat-eventbus">
+    <header class="lg-pattern__head">
+      <h3 id="pat-eventbus" class="lg-pattern__title">Event Bus</h3>
+    </header>
 
-    <div class="lg-navbar__spacer"></div>
+    <dl class="lg-concepts">
+      <!-- Concept: Channel -->
+      <div class="lg-concept">
+        <dt class="lg-concept__term">Channel</dt>
+        <dd class="lg-concept__def">
+          <ul class="lg-impls">
+            <li class="lg-impl" data-state="info">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="name mono">set</span>
+              <span class="lg-cmeter" aria-label="Complexity 2 of 5"><svg class="icon" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>2</span>
+            </li>
+            <li class="lg-impl" data-state="success">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="name mono">subject</span>
+              <span class="lg-cmeter" aria-label="Complexity 3 of 5"><svg class="icon" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>3</span>
+            </li>
+          </ul>
+        </dd>
+      </div>
 
-    <details class="lg-user" role="listbox">
-      <summary class="lg-user__summary" aria-haspopup="menu" aria-expanded="false">
-        <!-- Use an <img> if you have avatars -->
-        <!-- <img class="lg-avatar" src="assets/avatars/me.jpg" alt="Open user menu" /> -->
-        <span class="lg-avatar" aria-hidden="true">G</span>
-        <span class="sr-only">Open user menu</span>
-      </summary>
-      <ul class="lg-user__menu" role="menu">
-        <li role="none">
-          <a role="menuitem" href="/profile">Profile &amp; Stats</a>
-        </li>
-        <li role="none">
-          <button role="menuitem" type="button" id="logout-btn">Log out</button>
-        </li>
-      </ul>
-    </details>
-  </div>
-</header>
-<main class="wrap">
-  <header>
-    <h1>EDA Pub/Sub — One-Column Showcase</h1>
-    <p>
-      Simple vertical flow without a switcher. Cards and tasks demonstrate their
-      possible states and tags.
-    </p>
-  </header>
-  <section aria-labelledby="achievements" class="block">
-    <h2 id="achievements">
-      Achievements
-    </h2>
-    <section class="lg-pattern" aria-labelledby="pat-eventbus">
-      <header class="lg-pattern__head">
-        <h3 id="pat-eventbus" class="lg-pattern__title">Event Bus</h3>
-      </header>
-
-      <dl class="lg-concepts">
-        <!-- Concept: Channel -->
-        <div class="lg-concept">
-          <dt class="lg-concept__term">Channel</dt>
-          <dd class="lg-concept__def">
-            <ul class="lg-impls">
-              <li class="lg-impl" data-state="info">
-                <span class="dot" aria-hidden="true"></span>
-                <span class="name mono">set</span>
-                <span class="lg-cmeter" aria-label="Complexity 2 of 5"><svg class="icon" viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>2</span>
-              </li>
-              <li class="lg-impl" data-state="success">
-                <span class="dot" aria-hidden="true"></span>
-                <span class="name mono">subject</span>
-                <span class="lg-cmeter" aria-label="Complexity 3 of 5"><svg class="icon" viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>3</span>
-              </li>
-            </ul>
-          </dd>
-        </div>
-
-        <!-- Concept: Event model -->
-        <div class="lg-concept">
-          <dt class="lg-concept__term">Event model</dt>
-          <dd class="lg-concept__def">
-            <ul class="lg-impls">
-              <li class="lg-impl" data-state="info">
-                <span class="dot" aria-hidden="true"></span>
-                <span class="name mono">void</span>
-                <span class="lg-cmeter" aria-label="Complexity 1 of 5"><svg class="icon" viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>1</span>
-              </li>
-              <li class="lg-impl" data-state="info">
-                <span class="dot" aria-hidden="true"></span>
-                <span class="name mono">primitive</span>
-                <span class="lg-cmeter" aria-label="Complexity 2 of 5"><svg class="icon" viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>2</span>
-              </li>
-              <li class="lg-impl" data-state="success">
-                <span class="dot" aria-hidden="true"></span>
-                <span class="name mono">type</span>
-                <span class="lg-cmeter" aria-label="Complexity 3 of 5"><svg class="icon" viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>3</span>
-              </li>
-              <li class="lg-impl" data-state="info">
-                <span class="dot" aria-hidden="true"></span>
-                <span class="name mono">class</span>
-                <span class="lg-cmeter" aria-label="Complexity 4 of 5"><svg class="icon" viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>4</span>
-              </li>
-            </ul>
-          </dd>
-        </div>
-      </dl>
-    </section>
+      <!-- Concept: Event model -->
+      <div class="lg-concept">
+        <dt class="lg-concept__term">Event model</dt>
+        <dd class="lg-concept__def">
+          <ul class="lg-impls">
+            <li class="lg-impl" data-state="info">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="name mono">void</span>
+              <span class="lg-cmeter" aria-label="Complexity 1 of 5"><svg class="icon" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>1</span>
+            </li>
+            <li class="lg-impl" data-state="info">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="name mono">primitive</span>
+              <span class="lg-cmeter" aria-label="Complexity 2 of 5"><svg class="icon" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>2</span>
+            </li>
+            <li class="lg-impl" data-state="success">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="name mono">type</span>
+              <span class="lg-cmeter" aria-label="Complexity 3 of 5"><svg class="icon" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>3</span>
+            </li>
+            <li class="lg-impl" data-state="info">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="name mono">class</span>
+              <span class="lg-cmeter" aria-label="Complexity 4 of 5"><svg class="icon" viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>4</span>
+            </li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
   </section>
-  <hr class="block__divider" />
-  <!-- Learning Cards -->
-  <section aria-labelledby="learning-cards" class="block">
-    <h2 id="learning-cards">
-      Learning
-    </h2>
-    <nav class="section-chips" aria-label="Sections">
-      <button class="chip is-active" aria-selected="true" aria-controls="sec-1">
-        <span class="chip__dot" aria-hidden="true"></span>
-        Core Concepts
-        <span class="chip__badge">3/7</span>
-      </button>
+</section>
+<hr class="block__divider" />
+<!-- Learning Cards -->
+<section aria-labelledby="learning-cards" class="block">
+  <h2 id="learning-cards">
+    Learning
+  </h2>
+  <nav class="section-chips" aria-label="Sections">
+    <button class="chip is-active" aria-selected="true" aria-controls="sec-1">
+      <span class="chip__dot" aria-hidden="true"></span>
+      Core Concepts
+      <span class="chip__badge">3/7</span>
+    </button>
 
-      <button class="chip" aria-selected="false" aria-controls="sec-2">
-        <span class="chip__dot" aria-hidden="true"></span>
-        Pub/Sub
-      </button>
+    <button class="chip" aria-selected="false" aria-controls="sec-2">
+      <span class="chip__dot" aria-hidden="true"></span>
+      Pub/Sub
+    </button>
 
-      <button class="chip is-locked" aria-disabled="true" title="Finish Pub/Sub to unlock">
-        <span class="chip__dot" aria-hidden="true"></span>
-        Advanced
-      </button>
-    </nav>
-    <div class="stack" role="list">
-      <!-- Card: TODO -->
-      <article class="card learning" role="listitem" aria-labelledby="card1-title">
-        <div class="head">
-          <h3 class="title" id="card1-title">Simplest Event Bus</h3>
-          <span class="chip chip--done" aria-label="Status: Done"><span class="dot"
-              aria-hidden="true"></span>Done</span>
+    <button class="chip is-locked" aria-disabled="true" title="Finish Pub/Sub to unlock">
+      <span class="chip__dot" aria-hidden="true"></span>
+      Advanced
+    </button>
+  </nav>
+  <div class="stack" role="list">
+    <!-- Card: TODO -->
+    <article class="card learning linkable" role="listitem" aria-labelledby="card1-title"
+      [routerLink]="['content-item-article']">
+      <div class="head">
+        <h3 class="title" id="card1-title">Simplest Event Bus</h3>
+        <span class="chip chip--done" aria-label="Status: Done"><span class="dot" aria-hidden="true"></span>Done</span>
+      </div>
+
+      <p class="muted">Overview of publish/subscribe and message channels.</p>
+
+      <div class="hairline"></div>
+      <div class="tags-container">
+        <h4>Event Bus concepts</h4>
+        <div class="tags" aria-label="Tags">
+          <span class="tag" data-flavor="info" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">channel: subject </span>
+          </span>
+          <span class="tag" data-flavor="info" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event model: void </span>
+          </span>
+          <span class="tag" data-flavor="info" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">handle subscribe: simple method</span>
+          </span>
+          <span class="tag" data-flavor="info" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">handle subscribe: simple method</span>
+          </span>
+          <span class="tag" data-flavor="info" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">subscribe: methodinvoke</span>
+          </span>
+          <span class="tag" data-flavor="info" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">publish: method invoke</span>
+          </span>
         </div>
+      </div>
+    </article>
 
-        <p class="muted">Overview of publish/subscribe and message channels.</p>
+    <!-- Card: IN PROGRESS -->
+    <article class="card learning linkable" [routerLink]="['content-item-article']" role="listitem"
+      aria-labelledby="card2-title">
+      <div class="head">
+        <h3 class="title" id="card2-title">Channel Types</h3>
+        <span class="chip chip--progress" aria-label="Status: In progress"><span class="dot"
+            aria-hidden="true"></span>In&nbsp;Progress</span>
+      </div>
 
-        <div class="hairline"></div>
-        <div class="tags-container">
-          <h4>Event Bus concepts</h4>
-          <div class="tags" aria-label="Tags">
-            <span class="tag" data-flavor="info" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">channel: subject </span>
-            </span>
-            <span class="tag" data-flavor="info" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event model: void </span>
-            </span>
-            <span class="tag" data-flavor="info" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">handle subscribe: simple method</span>
-            </span>
-            <span class="tag" data-flavor="info" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">handle subscribe: simple method</span>
-            </span>
-            <span class="tag" data-flavor="info" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">subscribe: methodinvoke</span>
-            </span>
-            <span class="tag" data-flavor="info" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">publish: method invoke</span>
-            </span>
-          </div>
-        </div>
-      </article>
+      <p class="muted">
+        Decoupling producers and consumers via topics and handlers.
+      </p>
 
-      <!-- Card: IN PROGRESS -->
-      <article class="card learning" role="listitem" aria-labelledby="card2-title">
-        <div class="head">
-          <h3 class="title" id="card2-title">Channel Types</h3>
-          <span class="chip chip--progress" aria-label="Status: In progress"><span class="dot"
-              aria-hidden="true"></span>In&nbsp;Progress</span>
-        </div>
-
-        <p class="muted">
-          Decoupling producers and consumers via topics and handlers.
-        </p>
-
-        <!-- <div class="progress" aria-label="Progress">
+      <!-- <div class="progress" aria-label="Progress">
           <span style="--w: 56%"></span>
         </div> -->
 
-        <div class="hairline"></div>
-        <div class="tags-container">
-          <h4>Event Bus concepts</h4>
-          <div class="tags" aria-label="Tags">
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">channel: events property</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">channel: set</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">channel: window</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">channel: signal</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">channel: subject</span>
-            </span>
-          </div>
+      <div class="hairline"></div>
+      <div class="tags-container">
+        <h4>Event Bus concepts</h4>
+        <div class="tags" aria-label="Tags">
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">channel: events property</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">channel: set</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">channel: window</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">channel: signal</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">channel: subject</span>
+          </span>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card: DONE -->
-      <article class="card learning" role="listitem" aria-labelledby="card3-title">
-        <div class="head">
-          <h3 class="title" id="card3-title">Event Models</h3>
-          <span class="chip chip--todo" aria-label="Status: To do"><span class="dot"
-              aria-hidden="true"></span>To&nbsp;Do</span>
+    <!-- Card: DONE -->
+    <article class="card learning linkable" [routerLink]="['content-item-article']" role="listitem"
+      aria-labelledby="card3-title">
+      <div class="head">
+        <h3 class="title" id="card3-title">Event Models</h3>
+        <span class="chip chip--todo" aria-label="Status: To do"><span class="dot"
+            aria-hidden="true"></span>To&nbsp;Do</span>
+      </div>
+
+      <p class="muted">Designing immutable messages and payload shapes.</p>
+
+      <div class="hairline"></div>
+      <div class="tags-container">
+        <h4>Event Bus concepts</h4>
+        <div class="tags" aria-label="Tags">
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event model: void</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event model: primitive</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event model: interface</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event model: type</span>
+          </span>
+          <span class="tag" data-flavor="muted" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event model: class</span>
+          </span>
         </div>
+      </div>
 
-        <p class="muted">Designing immutable messages and payload shapes.</p>
-
-        <div class="hairline"></div>
-        <div class="tags-container">
-          <h4>Event Bus concepts</h4>
-          <div class="tags" aria-label="Tags">
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event model: void</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event model: primitive</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event model: interface</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event model: type</span>
-            </span>
-            <span class="tag" data-flavor="muted" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event model: class</span>
-            </span>
-          </div>
-        </div>
-
-        <!-- <div class="tags" aria-label="Tags">
+      <!-- <div class="tags" aria-label="Tags">
           <span class="tag" data-flavor="discovered" title="Discovered">
             <span class="flavor" aria-hidden="true"></span>
             <span class="mono">event bus: channel: void</span>
           </span>
         </div> -->
-      </article>
-    </div>
-  </section>
-  <hr class="block__divider" />
-  <!-- Project Tasks -->
-  <section aria-labelledby="project-tasks" class="block">
-    <h2 id="project-tasks">
-      Project
-    </h2>
-    <div class="stack" role="list">
-      <!-- Task: TODO -->
-      <article class="task" role="listitem" aria-labelledby="t1-title">
-        <div class="top">
-          <h3 class="title" id="t1-title">Task 1 — Show placeholder product</h3>
-          <span class="chip chip--done" aria-label="Status: Done"><span class="dot"
-              aria-hidden="true"></span>Done</span>
+    </article>
+  </div>
+</section>
+<hr class="block__divider" />
+<!-- Project Tasks -->
+<section aria-labelledby="project-tasks" class="block">
+  <h2 id="project-tasks">
+    Project
+  </h2>
+  <div class="stack" role="list">
+    <!-- Task: TODO -->
+    <article class="task" role="listitem" aria-labelledby="t1-title">
+      <div class="top">
+        <h3 class="title" id="t1-title">Task 1 — Show placeholder product</h3>
+        <span class="chip chip--done" aria-label="Status: Done"><span class="dot" aria-hidden="true"></span>Done</span>
+      </div>
+      <p class="desc">
+        Render 3 placeholder product cards. Display “No products are
+        selected”.
+      </p>
+      <div class="foot">
+        <div class="tags" aria-label="Tags">
+          <!-- tags optional for non-done tasks -->
+          <span class="tag" data-flavor="success" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event bus: channel: void</span>
+          </span>
+          <span class="tag" data-flavor="success" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event bus: handle subscribe: simple method</span>
+          </span>
+          <span class="tag" data-flavor="success" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event bus: handle publish: simple method</span>
+          </span>
+          <span class="tag" data-flavor="success" title="Discovered">
+            <span class="flavor" aria-hidden="true"></span>
+            <span class="mono">event bus: event model: type</span>
+          </span>
         </div>
-        <p class="desc">
-          Render 3 placeholder product cards. Display “No products are
-          selected”.
-        </p>
-        <div class="foot">
-          <div class="tags" aria-label="Tags">
-            <!-- tags optional for non-done tasks -->
-            <span class="tag" data-flavor="success" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event bus: channel: void</span>
-            </span>
-            <span class="tag" data-flavor="success" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event bus: handle subscribe: simple method</span>
-            </span>
-            <span class="tag" data-flavor="success" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event bus: handle publish: simple method</span>
-            </span>
-            <span class="tag" data-flavor="success" title="Discovered">
-              <span class="flavor" aria-hidden="true"></span>
-              <span class="mono">event bus: event model: type</span>
-            </span>
-          </div>
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- Task: IN PROGRESS -->
-      <article class="task" role="listitem" aria-labelledby="t2-title">
-        <div class="top">
-          <h3 class="title" id="t2-title">
-            Task 2 — Publish selection via EventBus
-          </h3>
-          <span class="chip chip--review" aria-label="Status: In review"><span class="dot"
-              aria-hidden="true"></span>In&nbsp;Review</span>
-        </div>
-        <p class="desc">
-          ProductList publishes selection events with product id.
-        </p>
-        <div class="foot">
-          <!-- <div class="meta">
+    <!-- Task: IN PROGRESS -->
+    <article class="task" role="listitem" aria-labelledby="t2-title">
+      <div class="top">
+        <h3 class="title" id="t2-title">
+          Task 2 — Publish selection via EventBus
+        </h3>
+        <span class="chip chip--review" aria-label="Status: In review"><span class="dot"
+            aria-hidden="true"></span>In&nbsp;Review</span>
+      </div>
+      <p class="desc">
+        ProductList publishes selection events with product id.
+      </p>
+      <div class="foot">
+        <!-- <div class="meta">
             <span class="mono">channel:</span><span>products:selected</span>
           </div> -->
-          <!-- <div class="tags" aria-label="Tags">
+        <!-- <div class="tags" aria-label="Tags">
             <span class="tag" data-flavor="success" title="Discovered">
               <span class="flavor" aria-hidden="true"></span>
               <span class="mono">event bus: channel: void</span>
             </span>
           </div> -->
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- Task: IN REVIEW -->
-      <article class="task" role="listitem" aria-labelledby="t3-title">
-        <div class="top">
-          <h3 class="title" id="t3-title">
-            Task 3 — Subscribe in ProductDetail
-          </h3>
-          <span class="chip chip--progress" aria-label="Status: In progress"><span class="dot"
-              aria-hidden="true"></span>In&nbsp;Progress</span>
-        </div>
-        <p class="desc">
-          ProductDetail subscribes to selection channel and renders full product
-          info.
-        </p>
-        <div class="foot">
-          <!-- <div class="meta">
+    <!-- Task: IN REVIEW -->
+    <article class="task" role="listitem" aria-labelledby="t3-title">
+      <div class="top">
+        <h3 class="title" id="t3-title">
+          Task 3 — Subscribe in ProductDetail
+        </h3>
+        <span class="chip chip--progress" aria-label="Status: In progress"><span class="dot"
+            aria-hidden="true"></span>In&nbsp;Progress</span>
+      </div>
+      <p class="desc">
+        ProductDetail subscribes to selection channel and renders full product
+        info.
+      </p>
+      <div class="foot">
+        <!-- <div class="meta">
             <span class="mono">coverage:</span><span>unit + e2e</span>
           </div> -->
-          <!-- <div class="tags" aria-label="Tags">
+        <!-- <div class="tags" aria-label="Tags">
             <span class="tag" data-flavor="discovered" title="Discovered">
               <span class="flavor" aria-hidden="true"></span>
               <span class="mono">event bus: channel: void</span>
             </span>
           </div> -->
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- Task: DONE -->
-      <article class="task" role="listitem" aria-labelledby="t4-title">
-        <div class="top">
-          <h3 class="title" id="t4-title">Task 4 — E2E flow green</h3>
-          <span class="chip chip--todo" aria-label="Status: To do"><span class="dot"
-              aria-hidden="true"></span>To&nbsp;Do</span>
-        </div>
-        <p class="desc">
-          Clicking 2nd card shows its details. All acceptance criteria
-          satisfied.
-        </p>
-        <div class="foot">
-          <!-- <div class="meta">
+    <!-- Task: DONE -->
+    <article class="task" role="listitem" aria-labelledby="t4-title">
+      <div class="top">
+        <h3 class="title" id="t4-title">Task 4 — E2E flow green</h3>
+        <span class="chip chip--todo" aria-label="Status: To do"><span class="dot"
+            aria-hidden="true"></span>To&nbsp;Do</span>
+      </div>
+      <p class="desc">
+        Clicking 2nd card shows its details. All acceptance criteria
+        satisfied.
+      </p>
+      <div class="foot">
+        <!-- <div class="meta">
             <span class="mono">tests:</span><span>task-show-products.spec.ts</span>
           </div> -->
-          <!-- <div class="tags" aria-label="Tags">
+        <!-- <div class="tags" aria-label="Tags">
             <span class="tag" data-flavor="practiced" title="Practiced">
               <span class="flavor" aria-hidden="true"></span>
               <span class="mono">event bus: channel: subject</span>
             </span>
           </div> -->
-        </div>
-      </article>
-    </div>
-  </section>
-</main>
+      </div>
+    </article>
+  </div>
+</section>

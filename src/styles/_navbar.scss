@@ -1,0 +1,140 @@
+.lg-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in oklab, var(--surface) 86%, transparent);
+  backdrop-filter: saturate(110%) blur(6px);
+  border-bottom: 1px dashed var(--container-outline-weak);
+}
+.lg-navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.lg-navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-high);
+}
+.lg-navbar__brand .lg-logo {
+  display: inline-flex;
+  align-items: center;
+}
+.lg-navbar__brand .lg-logo svg,
+.lg-navbar__brand .lg-logo svg * {
+  fill: var(--brand) !important;
+  stroke: var(--brand) !important;
+}
+.lg-navbar__brand .lg-logo img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+.lg-navbar__brand .lg-wordmark {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--brand);
+}
+.lg-navbar__spacer {
+  margin-left: auto;
+}
+
+/* User menu */
+.lg-user {
+  position: relative;
+}
+.lg-user__summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--container-outline-weak);
+  background: var(--container);
+  padding: 0.25rem 0.35rem 0.25rem 0.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  user-select: none;
+}
+.lg-user__summary:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.lg-user .lg-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  /* blends brand with container so it’s not too loud */
+  background: color-mix(in oklab, var(--brand) 18%, var(--container));
+  border: 1px solid
+    color-mix(in oklab, var(--brand) 35%, var(--container-outline-weak));
+  color: var(--text-high);
+  line-height: 1;
+}
+.lg-user__menu {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 200px;
+  padding: 0.4rem;
+  background: var(--container);
+  border: 1px solid var(--container-outline-weak);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 24px color-mix(in oklab, black 20%, transparent);
+  display: none;
+}
+.lg-user__menu li {
+  list-style: none;
+}
+.lg-user__menu a,
+.lg-user__menu button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: var(--text-high);
+  font-weight: 600;
+  padding: 0.6rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.lg-user__menu a:hover,
+.lg-user__menu button:hover {
+  background: var(--container-muted);
+}
+.lg-user__menu a:focus-visible,
+.lg-user__menu button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+/* subtle separator */
+.lg-user__menu li + li {
+  border-top: 1px dashed var(--container-outline-weak);
+}
+.lg-user__menu li + li a,
+.lg-user__menu li + li button {
+  margin-top: 0.2rem;
+}
+/* Open state of <details> */
+.lg-user[open] .lg-user__menu {
+  display: block;
+}
+
+/* Small tweaks on tiny screens */
+@media (max-width: 420px) {
+  .lg-navbar__inner {
+    padding: 0.45rem 0.6rem;
+  }
+  .lg-navbar__brand .lg-wordmark {
+    display: none;
+  } /* keep only the mark if space is tight */
+}
