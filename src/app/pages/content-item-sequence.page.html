@@ -1,11 +1,29 @@
 <article class="card article" aria-labelledby="article-title">
   <header class="article__head">
     <a class="link-back" [routerLink]="['..']">← Back</a>
-    <h1 id="article-title" class="title">Article title</h1>
+    <h1 id="article-title" class="title">Channel Types</h1>
     <div class="row article__meta">
       <span class="chip chip--progress"><span class="dot"></span>Reading</span>
       <span class="muted">~6 min read</span>
     </div>
+    <hr class="divider divider--compact" />
+    <section class="lg-stepper lg-stepper--compact has-nav" aria-label="Sequence progress">
+      <a class="lg-stepper__nav is-prev" href="/prev" aria-label="Previous article">← Prev</a>
+
+      <div class="lg-stepper__body">
+        <div class="lg-stepper__label">
+          <span class="mono">Set Implementation</span>
+          <strong class="lg-stepper__current">3</strong>
+          <span class="muted">/ 7</span>
+        </div>
+        <!-- Bind --p to current/total (0–100%) -->
+        <div class="lg-stepper__bar" aria-hidden="true">
+          <span style="--p: 42%"></span>
+        </div>
+      </div>
+
+      <a class="lg-stepper__nav is-next" href="/next" aria-label="Next article">Next →</a>
+    </section>
   </header>
 
   <div class="article__body markdown">

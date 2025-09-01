@@ -2,10 +2,10 @@
 <nav class="lg-navbar">
   <div class="lg-navbar__inner">
     <a class="lg-navbar__brand" href="#">
-      <span class="lg-logo">
-        <img src="assets/images/LOGO-Lowgular.svg" alt="Lowgular" />
-      </span>
       <span class="lg-wordmark">LOWGULAR</span>
+    </a>
+    <a class="lg-navbar__brand" href="/course-detail">
+      <span class="lg-wordmark">Course: Event Bus</span>
     </a>
     <div class="lg-navbar__spacer"></div>
     <details class="lg-user">
@@ -28,8 +28,8 @@
   </header>
 
   <!-- ======================
-         ATOMS
-         ====================== -->
+  ATOMS
+  ====================== -->
   <section aria-labelledby="atoms-title">
     <h2 id="atoms-title">Atoms</h2>
 
@@ -294,6 +294,55 @@
         </ol>
 
         <hr class="hairline" />
+        <h3 class="title">Steppers</h3>
+
+        <!-- Indicator-only stepper -->
+        <!-- Compact stepper WITH navigation -->
+        <section class="lg-stepper lg-stepper--compact has-nav" aria-label="Sequence progress">
+          <a class="lg-stepper__nav is-prev" href="/prev" aria-label="Previous article">← Prev</a>
+
+          <div class="lg-stepper__body">
+            <div class="lg-stepper__label">
+              <span class="mono">Article</span>
+              <strong class="lg-stepper__current">3</strong>
+              <span class="muted">/ 7</span>
+            </div>
+            <!-- Bind --p to current/total (0–100%) -->
+            <div class="lg-stepper__bar" aria-hidden="true">
+              <span style="--p: 42%"></span>
+            </div>
+          </div>
+
+          <a class="lg-stepper__nav is-next" href="/next" aria-label="Next article">Next →</a>
+        </section>
+
+
+        <!-- Numbered navigation stepper -->
+        <nav class="lg-stepper lg-stepper--nav" aria-label="Article sequence">
+          <a class="lg-stepper__nav is-prev" href="/prev" aria-label="Previous article">← Prev</a>
+
+          <ol class="lg-steps" role="list">
+            <li class="lg-step is-complete">
+              <a href="/a/1"><span class="sr-only">Article </span>1</a>
+            </li>
+            <li class="lg-step is-current">
+              <a href="/a/2" aria-current="step"><span class="sr-only">Article </span>2</a>
+            </li>
+            <li class="lg-step"><a href="/a/3"><span class="sr-only">Article </span>3</a></li>
+            <li class="lg-step"><a href="/a/4"><span class="sr-only">Article </span>4</a></li>
+            <li class="lg-step"><a href="/a/5"><span class="sr-only">Article </span>5</a></li>
+            <li class="lg-step"><a href="/a/6"><span class="sr-only">Article </span>6</a></li>
+            <li class="lg-step"><a href="/a/7"><span class="sr-only">Article </span>7</a></li>
+          </ol>
+
+          <a class="lg-stepper__nav is-next" href="/next" aria-label="Next article">Next →</a>
+
+          <!-- Compact label for very small screens -->
+          <div class="lg-stepper__label sm-only">
+            <strong>2</strong><span class="muted">/ 7</span>
+          </div>
+        </nav>
+
 
         <!-- TO DO -->
         <div class="row">

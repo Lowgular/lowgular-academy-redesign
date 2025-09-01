@@ -8,6 +8,9 @@
 @use "./styles/_links.scss" as *;
 @use "./styles/_alerts.scss" as *;
 @use "./styles/_navbar.scss" as *;
+@use "./styles/_stepper.scss" as *;
+@use "./styles/_hr.scss" as *;
+
 * {
   box-sizing: border-box;
 }
@@ -56,15 +59,19 @@ app-root > *:not(router-outlet) {
 }
 
 .wrap {
-  max-width: var(--container-w);
+  width: 100%;
   margin: 0 auto;
   padding: 0px 18px 48px;
   min-height: 0;
-  // display: flex;
-  // height: 100%; //calc(100% - var(--nav-h));
   overflow: auto;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: var(--container-w);
 }
 
 /* Simple layout helper for demos */
@@ -207,19 +214,6 @@ section {
   display: flex;
   gap: var(--gap-2);
   align-items: center;
-}
-
-.hairline {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  margin: 6px 0 0;
-}
-
-.block__divider {
-  width: 100%;
-  background-color: var(--neutral);
-  border: none;
-  height: 2px;
-  margin: 24px 0;
 }
 
 /* Constrain width like your pages */

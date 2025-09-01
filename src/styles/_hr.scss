@@ -1,0 +1,36 @@
+.hairline {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 6px 0 0;
+}
+
+hr,
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--container-outline-weak);
+  margin: 12px 0; /* tweak spacing as you like */
+}
+
+/* A slightly stronger section break (what your old .block__divider did) */
+.divider--strong {
+  height: 2px;
+  background: var(--neutral);
+}
+
+/* Very soft blend for dense areas */
+.divider--soft {
+  background: color-mix(in oklab, var(--surface-2) 70%, transparent);
+}
+
+/* Compact variant for tight headers */
+.divider--compact {
+  margin: 6px 0;
+}
+
+.block__divider {
+  width: 100%;
+  background-color: var(--neutral);
+  border: none;
+  height: 2px;
+  margin: 24px 0;
+}

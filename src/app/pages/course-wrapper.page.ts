@@ -41,7 +41,9 @@ import { RouterOutlet } from '@angular/router';
         </details>
       </div>
     </header>
-    <main class="wrap"><router-outlet></router-outlet></main>`,
+    <main class="wrap">
+      <div class="content"><router-outlet></router-outlet></div>
+    </main>`,
   standalone: true,
   imports: [RouterOutlet],
 })

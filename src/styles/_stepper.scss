@@ -1,0 +1,208 @@
+/* Base container */
+.lg-stepper {
+  background: var(--surface-2);
+  border: 1px solid var(--container-outline-weak);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* COMPACT: current / total + slim meter */
+.lg-stepper--compact {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--gap-2);
+  padding: var(--pad-2);
+}
+
+.lg-stepper__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.lg-stepper__current {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.lg-stepper__bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface);
+  overflow: hidden;
+  position: relative;
+}
+.lg-stepper__bar > span {
+  display: block;
+  height: 100%;
+  width: var(--p, 0%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--primary) 75%, white),
+    var(--primary)
+  );
+  transition: width 160ms ease;
+}
+
+/* NAV: buttons + numbered steps */
+.lg-stepper--nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--gap-2);
+  padding: var(--pad-2);
+}
+
+.lg-stepper__nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.lg-stepper__nav:hover {
+  background: color-mix(in oklab, var(--primary) 8%, var(--surface));
+  border-color: color-mix(
+    in oklab,
+    var(--primary) 28%,
+    var(--container-outline-weak)
+  );
+}
+.lg-stepper__nav:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.lg-stepper__nav.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Steps list */
+.lg-steps {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Each step as a circle button */
+.lg-step a {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: background-color 0.12s ease, border-color 0.12s ease,
+    color 0.12s ease, transform 0.06s ease-in-out;
+}
+.lg-step a:hover {
+  background: color-mix(in oklab, var(--primary) 10%, var(--surface));
+  border-color: color-mix(
+    in oklab,
+    var(--primary) 24%,
+    var(--container-outline-weak)
+  );
+}
+.lg-step a:active {
+  transform: translateY(1px);
+}
+.lg-step a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Current step */
+.lg-step.is-current a {
+  background: color-mix(in oklab, var(--primary) 18%, var(--surface));
+  border-color: var(--primary);
+  color: var(--text-high);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 22%, transparent);
+}
+
+/* Completed (visited) steps — keep subtle, not “success” */
+.lg-step.is-complete a {
+  color: var(--muted);
+  border-color: color-mix(
+    in oklab,
+    var(--text-muted) 26%,
+    var(--container-outline-weak)
+  );
+}
+
+/* Tiny screens: hide the number row, show compact label */
+.sm-only {
+  display: none;
+}
+@media (max-width: 460px) {
+  .lg-steps {
+    display: none;
+  }
+  .sm-only {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    justify-self: end;
+  }
+  .lg-stepper--nav {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+/* turn the compact stepper into 3 cols when it has nav */
+.lg-stepper--compact.has-nav {
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.lg-stepper__body {
+  display: grid;
+  gap: 10px;
+}
+
+/* If you already have .lg-stepper__nav from the numbered variant, keep it.
+   Including here for completeness (safe to duplicate). */
+.lg-stepper__nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--container-outline-weak);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.lg-stepper__nav:hover {
+  background: color-mix(in oklab, var(--primary) 8%, var(--surface));
+  border-color: color-mix(
+    in oklab,
+    var(--primary) 28%,
+    var(--container-outline-weak)
+  );
+}
+.lg-stepper__nav:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.lg-stepper__nav.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

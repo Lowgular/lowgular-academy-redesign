@@ -1,0 +1,71 @@
+// /* Make the page scroll again */
+// :host {
+//   display: block;
+//   min-height: 100%;
+//   height: auto;
+// }
+
+.article {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* allow inner scroller to shrink */
+  padding: var(--pad-2); /* keep your existing card padding */
+}
+
+.article-viewport {
+  /* Fill the viewport below the navbar; tweak the -24px if needed */
+  height: calc(100vh - var(--nav-h, 56px) - 24px);
+  overflow: auto;
+  min-height: 0;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth; /* optional */
+}
+/* Back link */
+.link-back {
+  display: inline-block;
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px dashed transparent;
+}
+.link-back:hover {
+  text-decoration: underline;
+}
+.link-back:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Sticky article header bar */
+.article__head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  /* visual “pin” so content slides under cleanly */
+  background: linear-gradient(var(--surface), var(--surface)) padding-box;
+  border-bottom: 1px solid var(--container-outline-weak);
+  padding: 10px 0 12px;
+}
+.article__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.markdown code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+.markdown pre {
+  background: var(--surface-2);
+  border: 1px solid var(--container-outline-weak);
+  border-radius: 8px;
+  padding: 12px;
+  overflow: auto;
+}
