@@ -4,7 +4,7 @@
     <a class="lg-navbar__brand" href="#">
       <span class="lg-wordmark">LOWGULAR</span>
     </a>
-    <a class="lg-navbar__brand" href="/course-detail">
+    <a class="lg-navbar__brand" href="/course-detail/no-achievements">
       <span class="lg-wordmark">Course: Event Bus</span>
     </a>
     <div class="lg-navbar__spacer"></div>
@@ -69,20 +69,20 @@
     <article class="card">
       <h3 class="title">Status chips</h3>
       <div class="row">
-        <span class="chip chip--todo"><span class="dot"></span> To-Do</span>
+        <span class="chip chip--neutral"><span class="dot"></span> To-Do</span>
         <span class="chip chip--progress"><span class="dot"></span> In progress</span>
-        <span class="chip chip--review"><span class="dot"></span> In review</span>
-        <span class="chip chip--done"><span class="dot"></span> Done</span>
+        <span class="chip chip--info"><span class="dot"></span> In review</span>
+        <span class="chip chip--success"><span class="dot"></span> Done</span>
       </div>
     </article>
 
     <article class="card">
       <h3 class="title">Badges</h3>
       <div class="row">
-        <span class="chip chip--todo">To-Do</span>
+        <span class="chip chip--neutral">To-Do</span>
         <span class="chip chip--progress">In progress</span>
-        <span class="chip chip--review">In review</span>
-        <span class="chip chip--done">Done</span>
+        <span class="chip chip--info">In review</span>
+        <span class="chip chip--success">Done</span>
       </div>
     </article>
 
@@ -261,7 +261,7 @@
 
         <!-- DONE -->
         <div class="row">
-          <span class="chip chip--done"><span class="dot" aria-hidden="true"></span> Done</span>
+          <span class="chip chip--success"><span class="dot" aria-hidden="true"></span> Done</span>
         </div>
         <ol class="todo-list" start="1">
           <li class="todo-item is-done">
@@ -346,7 +346,7 @@
 
         <!-- TO DO -->
         <div class="row">
-          <span class="chip chip--todo"><span class="dot" aria-hidden="true"></span> To do</span>
+          <span class="chip chip--neutral"><span class="dot" aria-hidden="true"></span> To do</span>
         </div>
         <ol class="todo-list" start="4">
           <li class="todo-item">
@@ -373,7 +373,7 @@
                 <small class="muted">setup</small>
               </div>
               <div class="todo-status">
-                <span class="chip chip--done chip--xs"><span class="dot" aria-hidden="true"></span> Done</span>
+                <span class="chip chip--success chip--xs"><span class="dot" aria-hidden="true"></span> Done</span>
               </div>
             </div>
           </li>
@@ -385,7 +385,7 @@
                 <small class="muted">tests</small>
               </div>
               <div class="todo-status">
-                <span class="chip chip--done chip--xs"><span class="dot" aria-hidden="true"></span> Done</span>
+                <span class="chip chip--success chip--xs"><span class="dot" aria-hidden="true"></span> Done</span>
               </div>
             </div>
           </li>
@@ -411,7 +411,7 @@
                 <small class="muted">integration</small>
               </div>
               <div class="todo-status">
-                <span class="chip chip--todo chip--xs"><span class="dot" aria-hidden="true"></span> To do</span>
+                <span class="chip chip--neutral chip--xs"><span class="dot" aria-hidden="true"></span> To do</span>
               </div>
             </div>
           </li>
@@ -423,7 +423,7 @@
                 <small class="muted">docs</small>
               </div>
               <div class="todo-status">
-                <span class="chip chip--todo chip--xs"><span class="dot" aria-hidden="true"></span> To do</span>
+                <span class="chip chip--neutral chip--xs"><span class="dot" aria-hidden="true"></span> To do</span>
               </div>
             </div>
           </li>
@@ -449,7 +449,7 @@
     <article class="card learning">
       <div class="head">
         <h3 class="title">Learning: Event Model</h3>
-        <span class="chip chip--done"><span class="dot"></span> Done</span>
+        <span class="chip chip--success"><span class="dot"></span> Done</span>
       </div>
       <p class="muted">Concepts &amp; implementations explored: void, primitive, type, class.</p>
       <div class="tags">
@@ -464,7 +464,7 @@
     <article class="task">
       <div class="top">
         <h4 class="title">Task: Pub/Sub — Show Product</h4>
-        <span class="chip chip--review"><span class="dot"></span> In review</span>
+        <span class="chip chip--info"><span class="dot"></span> In review</span>
       </div>
       <p class="desc">Publish selection from <span class="mono">ProductList</span> and render in <span
           class="mono">ProductDetail</span>.</p>
@@ -561,7 +561,7 @@
         <article class="card learning">
           <div class="head">
             <h4 class="title">EDA — Event Model</h4>
-            <span class="chip chip--done"><span class="dot"></span> Done</span>
+            <span class="chip chip--success"><span class="dot"></span> Done</span>
           </div>
           <div class="tags">
             <span class="tag" data-flavor="discovered"><span class="flavor"></span>void</span>
@@ -580,7 +580,7 @@
         <article class="task">
           <div class="top">
             <h4 class="title">Task 1 — Show Product</h4>
-            <span class="chip chip--todo"><span class="dot"></span> To-Do</span>
+            <span class="chip chip--neutral"><span class="dot"></span> To-Do</span>
           </div>
           <p class="desc">Render placeholder when no product selected.</p>
           <div class="foot">
@@ -606,7 +606,7 @@
         <article class="task">
           <div class="top">
             <h4 class="title">Task 3 — Detail View</h4>
-            <span class="chip chip--review"><span class="dot"></span> In review</span>
+            <span class="chip chip--info"><span class="dot"></span> In review</span>
           </div>
           <p class="desc">Subscribe to EventBus and render ProductDetail.</p>
           <div class="foot">
@@ -619,7 +619,7 @@
         <article class="task">
           <div class="top">
             <h4 class="title">Task 4 — Acceptance Tests</h4>
-            <span class="chip chip--done"><span class="dot"></span> Done</span>
+            <span class="chip chip--success"><span class="dot"></span> Done</span>
           </div>
           <p class="desc">E2E specs for scenarios outlined in the module.</p>
           <div class="foot">
@@ -669,7 +669,7 @@
         <article class="card learning">
           <div class="head">
             <h4 class="title">EDA — Event Model</h4>
-            <span class="chip chip--done"><span class="dot"></span> Done</span>
+            <span class="chip chip--success"><span class="dot"></span> Done</span>
           </div>
           <div class="tags">
             <span class="tag" data-flavor="discovered"><span class="flavor"></span>void</span>
@@ -687,7 +687,7 @@
         <article class="task">
           <div class="top">
             <h4 class="title">Task — Wire EventBus</h4>
-            <span class="chip chip--todo"><span class="dot"></span> To-Do</span>
+            <span class="chip chip--neutral"><span class="dot"></span> To-Do</span>
           </div>
           <p class="desc">Define interface and create Subject-based channel.</p>
           <div class="foot">
@@ -822,7 +822,7 @@
         <article class="task">
           <div class="top">
             <h4 class="title">Implement ProductDetail subscription</h4>
-            <span class="chip chip--review"><span class="dot"></span> In review</span>
+            <span class="chip chip--info"><span class="dot"></span> In review</span>
           </div>
           <p class="desc">Subscribe to selections, render selected product.</p>
           <div class="foot">

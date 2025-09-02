@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ContentItemArticlePage } from './pages/content-item-article.page';
 import { ContentItemSequencePage } from './pages/content-item-sequence.page';
+import { CourseDetailNoAchievementsPage } from './pages/course-detail-no-achievements.page';
 import { CourseDetailPage } from './pages/course-detail.page';
 import { CourseFullWrapperPage } from './pages/course-full-wrapper.page';
 import { CourseWrapperPage } from './pages/course-wrapper.page';
@@ -26,6 +27,10 @@ export const routes: Routes = [
       {
         path: '',
         component: CourseDetailPage,
+      },
+      {
+        path: 'no-achievements',
+        component: CourseDetailNoAchievementsPage,
       },
       {
         path: 'content-item-article',
